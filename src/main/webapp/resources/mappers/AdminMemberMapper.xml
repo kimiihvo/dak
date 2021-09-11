@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminMemberMapper">
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+   	<resultMap id="adminMemberMap" type="study.spring.dak.model.Member">	
+		        	<result property="memno" column="memno" />
+			        <result property="memId" column="m_id" />
+			        <result property="memPw" column="m_pw" />
+			        <result property="memName" column="m_name" />
+			        <result property="nick" column="nick"/>
+			        <result property="phone" column="phone" />
+			        <result property="email" column="email" />
+			        <result property="birthdate" column="birthdate" />
+			        <result property="gender" column="gender" />
+			        <result property="regDate" column="reg_date" />
+			        <result property="isOut" column="is_out" />
+			        <result property="isAdmin" column="is_admin" />
+    </resultMap>
+
+    
+    <select id="selectCountAll"
+		parameterType="study.spring.dak.model.Member"
+		resultType="int">
+		 SELECT count(*) FROM member	
+		<where>
+			<if test="nick != null and nick !=''">
+				nick Like concat('%',#{nick},'%')
+			</if>
+		</where>
+	</select>
+	
+	
+    <update id="updateItem"
+        parameterType="study.spring.dak.model.Member">
+        UPDATE member SET status=#{status}
+        WHERE memno=#{memno};
+    </update>
+    
+    <update id="updateItem2"
+        parameterType="study.spring.dak.model.Member">
+        UPDATE member SET c_content=#{comContent}, c_reg_date=now()
+        WHERE memno=#{memno};
+    </update>
+    
+
+    
+	<!-- 다중행 조회를 위한 기능 정의 -->
+    <select id="selectList"
+        parameterType="study.spring.dak.model.Member"
+        resultMap="adminMemberMap">
+        SELECT memno,m_id,m_name,nick,phone,email,date_format(birthdate,'%Y-%m-%d') as birthdate,gender,date_format(reg_date,'%Y-%m-%d') as reg_date ,is_out,is_admin FROM member 
+        <where>
+            <if test="nick != null and nick != ''">
+                nick LIKE concat('%', #{nick}, '%')
+            </if>         
+        </where>
+        ORDER BY memno desc
+        	 <if test="listCount > 0">
+                LIMIT #{offset},#{listCount}
+          	</if>
+    </select>
+	<select id="selectItem"
+		parameterType="study.spring.dak.model.Member"
+		resultMap="adminMemberMap">
+		SELECT
+			memno,m_id,m_name,nick,phone,email,date_format(birthdate,'%Y-%m-%d') as birthdate,gender,date_format(reg_date,'%Y-%m-%d') as reg_date ,is_out,is_admin
+            FROM member 
+	        WHERE memno=#{memno}
+	</select>
+
+	<!-- 로그인 체크 -->
+    <select id="loginCheck"
+        parameterType="study.spring.dak.model.Member"
+        resultMap="adminMemberMap">
+        SELECT memno,m_id,m_name,nick,phone,email,date_format(birthdate,'%Y-%m-%d') as birthdate,
+        gender,date_format(reg_date,'%Y-%m-%d') as reg_date, is_out,is_admin
+        FROM member WHERE m_id=#{memId} AND m_pw=SHA2(#{memPw}, 256);
+    </select>
+
+</mapper>

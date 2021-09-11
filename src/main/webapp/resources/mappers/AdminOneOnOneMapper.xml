@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminOneOnOneMapper">
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+   	<resultMap id="adminOneOnOneMap" type="study.spring.dak.model.OneOnOne">	
+		        	<result property="memno" column="memno" />
+			        <result property="oneno" column="oneno" />
+			        <result property="regDate" column="reg_date" />
+			        <result property="category" column="category" />
+			        <result property="title" column="title"/>
+			        <result property="content" column="content" />
+			        <result property="file" column="file" />
+			        <result property="status" column="status" />
+			        <result property="nick" column="nick" />
+			        <result property="comContent" column="c_content" />
+			        <result property="comRegDate" column="c_reg_date" />
+    </resultMap>
+    
+    
+    <select id="selectCountAll"
+		parameterType="study.spring.dak.model.OneOnOne"
+		resultType="int">
+		 SELECT count(*) FROM one_on_one o Inner JOIN member m ON m.memno=o.memno Left Outer join one_on_one_comment c ON c.oneno=o.oneno	
+		<where>
+			<if test="nick != null and nick !=''">
+				AND m.nick Like concat('%',#{nick},'%')
+			</if>
+			 <if test="status != null and status != ''">
+                AND o.status LIKE concat('%', #{status}, '%')
+            </if> 
+		</where>
+	</select>
+	
+	
+   	<insert id="insertItem"
+    	parameterType="study.spring.dak.model.OneOnOne">
+    	INSERT INTO one_on_one_comment (
+    		oneno, c_content, c_reg_date
+    		)
+    		VALUES( 
+    		#{oneno},#{comContent},now())	
+    </insert>
+    <update id="updateItem"
+        parameterType="study.spring.dak.model.OneOnOne">
+        UPDATE one_on_one SET status=#{status}
+        WHERE oneno=#{oneno};
+    </update>
+    
+    <update id="updateItem2"
+        parameterType="study.spring.dak.model.OneOnOne">
+        UPDATE one_on_one_comment SET c_content=#{comContent}, c_reg_date=now()
+        WHERE oneno=#{oneno};
+    </update>
+    
+    
+    
+    <delete id="deleteItem"
+        parameterType="study.spring.dak.model.OneOnOne">
+        DELETE FROM one_on_one_comment WHERE oneno=#{oneno}
+    </delete>
+    <delete id="deleteItem2"
+        parameterType="study.spring.dak.model.OneOnOne">
+        DELETE FROM one_on_one WHERE oneno=#{oneno}
+    </delete>
+	
+   
+    
+    
+	<!-- 다중행 조회를 위한 기능 정의 -->
+    <select id="selectList"
+        parameterType="study.spring.dak.model.OneOnOne"
+        resultMap="adminOneOnOneMap">
+        SELECT * FROM one_on_one o Inner JOIN member m ON m.memno=o.memno Left Outer join one_on_one_comment c ON c.oneno=o.oneno
+        <where>
+            <if test="nick != null and nick != ''">
+                AND m.nick LIKE concat('%', #{nick}, '%')
+            </if>
+             <if test="status != null and status != ''">
+                AND o.status LIKE concat('%', #{status}, '%')
+            </if>          
+        </where>
+        ORDER BY o.oneno DESC
+        	 <if test="listCount > 0">
+                LIMIT #{offset},#{listCount}
+          	</if>
+    </select>
+	<select id="selectItem"
+		parameterType="study.spring.dak.model.OneOnOne"
+		resultMap="adminOneOnOneMap">
+		SELECT
+			o.memno, o.oneno, o.reg_date, category, title,     
+			content, file, status, nick, c_content, c_reg_date
+            FROM one_on_one as o
+	        Inner JOIN member m ON m.memno=o.memno Left Outer join one_on_one_comment c ON c.oneno=o.oneno
+	        WHERE o.oneno=#{oneno}
+	</select>
+
+
+
+</mapper>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminOrderListMapper">
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+   	<resultMap id="adminOrderListMap" type="study.spring.dak.model.OrderList">	
+		        	<result property="odrno" column="odrno" />
+			        <result property="memno" column="memno" />
+			        <result property="memName" column="m_name" />
+			        <result property="phone" column="phone" />
+			        <result property="regDate" column="reg_date" />
+			        <result property="toPrice" column="total_price" />
+			        <result property="status" column="status" />
+			        <result property="pay" column="pay"/>
+			        <result property="fee" column="fee" />
+			        <result property="disAmount" column="dis_amount" />
+			        <result property="dlvyName" column="dlvy_name" />
+			        <result property="dlvyAdr" column="dlvy_adr" />
+			        <result property="dlvyTel" column="dlvy_tel" />
+    </resultMap>
+    
+    <resultMap id="adminProductOrderMap" type="study.spring.dak.model.ProductOrder">	
+		        <result property="title" column="title" />
+		        <result property="price" column="price" />
+		        <result property="qty" column="qty" />
+		        <result property="odrno" column="odrno" />
+		        <result property="prdno" column="prdno" />
+    </resultMap>
+     
+     
+    <select id="selectCountAll"
+		parameterType="study.spring.dak.model.OrderList"
+		resultType="int">
+		 SELECT count(*) FROM order_list o Inner JOIN member m ON m.memno=o.memno 	
+		<where>
+			<if test="memName != null and memName !=''">
+				m_name Like concat('%',#{memName},'%')
+			</if>
+		</where>
+	</select>
+	
+	
+    <update id="updateItem"
+        parameterType="study.spring.dak.model.OrderList">
+        UPDATE order_list SET status=#{status}, dlvy_name=#{dlvyName},dlvy_adr=#{dlvyAdr},dlvy_tel=#{dlvyTel}
+        WHERE odrno=#{odrno};
+    </update>
+    
+    
+    
+    
+	<!-- 다중행 조회를 위한 기능 정의 -->
+    <select id="selectList"
+        parameterType="study.spring.dak.model.OrderList"
+        resultMap="adminOrderListMap">
+        SELECT * FROM order_list o Inner JOIN member m ON m.memno=o.memno 
+        <where>
+            <if test="memName != null and memName != ''">
+                m_name LIKE concat('%', #{memName}, '%')
+            </if>         
+        </where>
+        ORDER BY o.odrno DESC
+        	 <if test="listCount > 0">
+                LIMIT #{offset},#{listCount}
+          	</if>
+    </select>
+    
+    
+    
+    
+    
+    <!-- 다중행 조회를 위한 기능 정의 -->
+    <select id="selectList2"
+        parameterType="study.spring.dak.model.ProductOrder"
+        resultMap="adminProductOrderMap">
+        SELECT * FROM product_order o Left outer join product p ON p.prdno=o.prdno
+		WHERE odrno=#{odrno}        
+    </select>
+    
+	<select id="selectItem"
+		parameterType="study.spring.dak.model.OrderList"
+		resultMap="adminOrderListMap">
+		SELECT
+			o.memno, o.odrno, m.m_name,m.phone, o.reg_date, o.total_price,
+			o.status, o.pay, o.fee, o.dis_amount, o.dlvy_name,
+			o.dlvy_adr, o.dlvy_tel
+			          FROM order_list as o
+	        Inner JOIN member m ON m.memno=o.memno 
+	        WHERE o.odrno=#{odrno} 
+	</select>
+
+
+
+</mapper>
