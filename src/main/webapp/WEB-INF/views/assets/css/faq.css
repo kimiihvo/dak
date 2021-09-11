@@ -1,0 +1,256 @@
+@charset 'utf-8';
+
+section {
+    position: relative;
+}
+
+section > div > h3 {
+    padding: 0 18px;
+    font-size: 1rem;
+    line-height: 46px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+section.title-wrapper {
+    border-bottom: 0;
+}
+
+h2.title {
+    position: relative;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+h2.title a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: url(../../assets/img/kind_back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 22px;
+}
+
+select {
+    max-width: 100%;
+    height: 40px;
+    padding: 4px 6px;
+    border: 1px solid #999;
+    border-radius: 0;
+    background: url(../../assets/img/select_arrow.png) no-repeat 98% center/10px 6px #fff;
+    color: #666;
+    font: inherit;
+    -webkit-appearance: none;
+}
+
+.form-input {
+    height: 40px;
+    color: rgb(102, 102, 102);
+    font-size: 0.9rem;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221);
+    border-image: initial;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease 0s;
+}
+
+.faq-board {
+    padding: 10px;
+}
+
+.faq-board .board-search {
+    clear: both;
+    margin-bottom: 15px;
+    padding: 7px 0;
+    border: 1px solid #e0e0e0;
+}
+
+.faq-board .board-search form {
+    position: relative;
+    padding: 0 38px 0 75px;
+    text-align: center;
+}
+
+.faq-board .board-search select {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 0;
+    width: 70px;
+}
+
+
+.form-input.block {
+    width: 100% !important;
+}
+
+.faq-board .board-search input.form-input.search {
+    border-width: 0 1px;
+}
+
+.faq-board .board-search .btn-search {
+    position: absolute;
+    right: 0;
+    top: 4px;
+    display: inline-block;
+    width: 38px;
+    height: 34px;
+    border: 0;
+    background: url(../../assets/img/btn_search.png) no-repeat center/18px;
+    vertical-align: top;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.faq-board .board-header {
+    padding: 15px 0;
+}
+
+.faq-board .board-header span {
+    line-height: 34px;
+    font-size: 0.9rem;
+}
+
+.faq-board .board-header a {
+    float: right;
+    padding: 8px 20px;
+    color: #5bc0de;
+    border: 1px solid #5bc0de;
+    line-height: 16px;
+}
+
+.faq-board .board-cat {
+    width: 100%;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.faq-board .board-cat > ul {
+    border-top: 1px solid #e0e0e0;
+}
+
+.faq-board .board-cat > ul > li {
+    float: left;
+    width: 33.33%;
+}
+
+.faq-board .board-cat > ul > li > a {
+    display: block;
+    position: relative;
+    height: 34px;
+    border: 1px solid #e0e0e0;
+    border-width: 0 1px 1px 0;
+    color: #888;
+    line-height: 34px;
+}
+
+.faq-board .board-cat > ul > li.active > a {
+    background: #fafafa;
+    color: #333;
+    font-weight: bold;
+}
+
+.faq-board .board-cat > ul > li:nth-child(3n-2) > a {
+    border-width: 0 1px 1px 1px;
+}
+
+.faq-board .board-list {
+    margin: 15px 0;
+    border-top: 1px solid #dbdbdb;
+}
+
+.faq-board .board-list .content {
+	display: none;
+}
+
+.faq-board .board-list > li {
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.faq-board .board-list > li > .subject {
+    padding: 15px;
+}
+
+.faq-board .board-list > li > .subject > p:first-child {
+    padding-top: 0;
+}
+
+.faq-board .board-list > li > .subject > p {
+    overflow: hidden;
+    padding-top: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.faq-board .board-list li .subject .title {
+    font-size: 0.85rem;
+}
+
+.faq-board .board-list > li > .subject > p.stat{
+    color: #666;
+    font-size: 0.78rem;
+}
+
+.faq-board .board-list > li > .content {
+    line-height: 20px;
+    padding: 15px;
+    border-top: 1px solid #dbdbdb;
+    background: #fafafa;
+}
+
+.faq-board .board-list > li > .content .answer {
+    position: relative;
+    min-height: 30px;
+    margin: 15px 0;
+    padding-left: 43px;
+}
+
+.faq-board .board-list > li > .content .answer:before {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background-color: #ef6363;
+    color: #fff;
+    font-family: 'arial';
+    font-size: 1.167rem;
+    text-align: center;
+    line-height: 29px;
+    content: 'A';
+}
+
+
+.box-btn > a {
+    display: inline-block;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.4;
+    white-space: nowrap;
+    cursor: pointer;
+    appearance: none;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    padding: 10px 12px 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(75, 84, 94);
+    border-image: initial;
+    outline: none;
+    background: rgb(75, 84, 94);
+    transition: all 0.2s ease 0s;
+}

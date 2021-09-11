@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+section {
+	box-sizing: border-box;
+}
+
+/*----------------------------
+헤더
+-----------------------------*/
+
+.counsel-header-wrap > div {
+	border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    line-height: 39px;
+}
+
+
+.counsel-header {
+    width: 100%;
+    padding: 7px;
+
+
+}
+
+.counsel-header a img {
+    width: 22px;
+    float: left;
+    padding: 13px 10px;
+}
+
+.counsel-header h2 {
+    text-align: center;
+    font-size: 18px;
+    padding-right: 44px;
+    color: #111;
+}
+
+/*----------------------------
+섹션
+-----------------------------*/
+
+
+
+.counsel-section {
+	background-color: #f9f9f9;
+	padding:10px;
+}
+
+.counsel-menu ul {
+	text-align: center;
+}
+
+.counsel-menu ul li {
+	display: inline-block;
+	margin: 6px 0;
+	font-size: 14px;
+	padding:0 6px;
+	border-right: 1px solid #ccc;
+}
+
+.counsel-menu ul li a {
+	color: #666;
+}
+
+.counsel-menu ul li .active {
+	font-weight: bold;
+	color: #ff6001;
+}
+
+
+.counsel-menu ul li:last-child {
+	border-right: none;
+}
+
+/*----------------------------
+문의내역
+-----------------------------*/
+
+.counsel-wrap h3 {
+	color: #666;
+	margin: 30px 0 10px;
+}
+.counsel-list>ul {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+
+	background-color: #fff;
+}
+
+.counsel-list>ul>li {
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+
+}
+
+.counsel-wrap ul li:last-child {
+	border-bottom: none;
+}
+
+.counsel-wrap ul li .box {
+	margin: 15px 10px 20px;
+}
+
+.counsel-wrap .box .row-1 {
+	margin-bottom: 10px;
+}
+
+.counsel-wrap .box .row-1 span{
+	color: #999;
+	font-size: 11px;
+}
+
+.counsel-wrap .box .row-1 .date {
+	margin-left: 10px;
+}
+
+.counsel-wrap .box .row-1 .state {
+	float: right;
+	font-weight: bold;
+}
+.ans {
+	color:  #ff6001;
+}
+/*----------------------------
+버튼
+-----------------------------*/
+
+
+.counsel-btn{
+	margin: 20px 10px;
+}
+
+.counsel-btn span {
+	display: block;
+	float: left;
+	box-sizing: border-box;
+	width: 49%;
+}
+
+
+.counsel-btn span:last-child {
+	float: right;
+}
+
+.counsel-btn span a {
+	padding: 15px 12px 16px;
+	display: block;
+    text-align: center;
+    background-color: #4B545E;
+    font-size: 15px;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.counsel-btn span:last-child a{
+	background-color: #ff6001;
+}
+
+/*----------------------------
+페이징
+-----------------------------*/
+
+.paging {
+	margin: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.paging li {
+    display: inline;
+    padding: 0 2px;
+    color: #9e9e9e;
+    vertical-align: middle;
+}
+
+
+.paging li a {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    color: #000;
+    line-height: 34px;
+}
+
+.paging li b {
+	color: #ff6601;
+}
+
+
+.box {
+	cursor: pointer;
+	word-break :break-all; 
+}
+
+.counsel-list ul li ul {
+	margin: 0 15px;
+}
+
+.counsel-list ul li ul li {
+	border-top: 1px solid #ddd;
+	padding: 20px 0;
+	color: #666;
+}
+
+.answer{
+	word-break :break-all; 
+}
+.empty {
+	text-align: center;
+    padding: 60px 0;
+}

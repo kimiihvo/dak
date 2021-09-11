@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+.odr-list-menu {
+    padding-bottom: 20px;
+}
+
+.odr-list-list-content {
+    border-top: 1px solid #ddd;
+}
+
+.odr-detail {
+    margin: 20px 10px;
+}
+
+.list-top {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.review-wr-btn a {
+    box-sizing: border-box;
+    display: inline-block;
+    border: 1px solid #ff6001;
+    padding: 13px;
+    width: 49.3%;
+    text-align: center;
+    color: #ff6001;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.review-wr-btn a.dlv-check {
+    border: 1px solid #888;
+    color: #888;
+}
+
+.list-cnt {
+    border-bottom: none;
+}
+
+.review-wr-btn {
+    padding: 15px 0 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.odr-detail .right {
+    float: right;
+}
+.pay .left {
+    font-weight: bold;
+}
+
+.purchase p span {
+    color: #555;
+}
+
+.purchase .t-price span {
+    color: #000;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.purchase .t-price .right {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.pay .right {
+    width: 65%;
+}
+
+.odr-detail .left {
+    width: 30%;
+}
+.purchase p,
+.pay p {
+    padding: 10px 0;
+}
+
+.purchase {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.pay {
+    padding: 10px 0 25px;
+}
+
+.go-odr-list {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    background: #4b545e;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    padding: 17px;
+    border-radius: 4px;
+}
+
+.delete-odr-list {
+	border: 1px solid;
+	margin-top: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    background: #fff;
+    color: #4b545e;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    padding: 17px;
+    border-radius: 4px;
+}
+
+.odr-detail-ul li {
+    box-sizing: border-box;
+}
+
+.odr-list-header h2 {
+    padding-right: 56px;
+}
+
+.odr-list-list-content li {
+    padding: 15px 0 0;
+}

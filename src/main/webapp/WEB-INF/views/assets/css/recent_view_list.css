@@ -1,0 +1,181 @@
+@charset "utf-8";
+
+
+section {
+	box-sizing: border-box;
+}
+
+/*----------------------------------------------------------*/
+
+.rv-header {
+	border-top: 1px solid #e6e6e6;
+    width: 100%;
+    padding: 8px 7px;
+    line-height: 40px;
+    border-bottom: 10px solid #eee;
+}
+
+.rv-header a img {
+    width: 22px;
+    float: left;
+    margin: 13px 13px 13px 10px;
+}
+
+.rv-header h2 {
+    text-align: center;
+    font-size: 18px;
+    padding-right: 57px;
+    color: #333;
+}
+
+/*---------------------------------------------------------------------
+탑
+---------------------------------------------------------------------*/
+
+.recent-view-top {
+	padding: 12px 15px;
+    line-height: 22px;
+}
+
+.recent-view-top a {
+	float: right;
+    margin-top: 1px;
+}
+
+.recent-view-top a img {
+	width: 12px;
+	vertical-align: middle;
+	margin: 3px;
+}
+
+
+/*---------------------------------------------------------------------
+박스 리스트
+---------------------------------------------------------------------*/
+
+
+
+
+.recent-view-list li {
+	
+	display: block;
+	width: 100%;
+    padding: 20px 0 10px 0;
+	border-bottom: 1px solid #e6e6e6;
+	position: relative;
+}
+
+.box-list {
+
+}
+
+
+.box-list div {
+	float: left;
+}
+
+
+.box-list .desc {
+	width: 60%;
+	margin-left: 13px;
+}
+
+/*.box-list> .img {
+	width: 35%;
+}*/
+
+.box-list .img img {
+	width: 110px;
+}
+
+
+.box-list .delivery {
+	width: 70px;
+    vertical-align: middle;
+}
+
+.box-list .rating img {
+	width: 80px;
+}
+
+.box-list .desc .name {
+	font-size: 13px;
+	line-height: 1.5;
+	margin-right: 5px;
+}
+
+.box-list .desc p {
+	margin-bottom: 10px;
+}
+
+.box-list .desc .price {
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.box-list .desc .price strong {
+	font-size: 14px;
+}
+
+.box-list .desc .icon img {
+	width: 21px;
+	margin: 3px 20px 3px 0;
+	vertical-align: middle;
+}
+
+.box-list .desc .icon a:last-child img {
+	width: 19px;
+}
+
+.box-list .desc .timer {
+    color: #ff542a;
+    font-size: 12px;
+}
+
+.box-list .desc .rating {
+	font-size: 12px;
+	color: #666;
+}
+/*---------------------------------------------------------------------
+빈 장바구니
+---------------------------------------------------------------------*/
+.empty {
+    padding: 15px;
+    text-align: center;
+    height: 100%;
+}
+
+.empty p {
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #444;
+}
+
+.empty > span {
+    display: inline-block;
+    width: 200px;
+    line-height: 48px;
+    background-color: #fff;
+    border-radius: 7px;
+    margin: 5px 0;
+    border: 1px solid #4B545E;
+    padding-bottom: 2px;
+}
+
+.empty a .cart-btn-continue {
+    color: #333;
+}
+
+.empty a {
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.del-btn {
+	float: right;
+    position: absolute;
+    right: 0;
+    bottom: 27px;
+}

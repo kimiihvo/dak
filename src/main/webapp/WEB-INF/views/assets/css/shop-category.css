@@ -1,0 +1,141 @@
+@charset "utf-8";
+
+
+/*------------------------------------------------------------------*/
+
+nav ul li span {
+    color: #333;
+    border-bottom: 2px solid #ff6001;
+    padding-bottom: 7px;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 0;
+}
+
+.swiper-button-next img, .swiper-button-prev img{
+    width: 8px;
+}
+
+/*----------------------------------------shop-category-----------*/
+.category-menu-nav {
+}
+
+.category-menu-nav ul {
+
+    width: 100%;
+}
+.category-menu-nav li a{
+    text-align: center;
+    float: left;
+    padding-bottom: 12px;
+}
+
+.category-menu-nav li a img {
+    width: 38px;
+    margin: 0 8px auto;
+    display: block;
+    padding: 5px 10px 0 10px;
+}
+
+.category-menu-nav ul li {
+    padding-right: 5px;
+}
+
+.category-menu-nav li a span{
+    font-size: 12px;
+}
+
+
+/* ---------------------active----------------- */
+
+.category-menu-nav .swiper-slide-active , .menu-nav-active {
+    font-weight: bold;
+
+}
+
+.category-menu-nav .swiper-wrapper .swiper-slide-active span,
+.menu-nav-active span {
+    color: #ff6001;
+    border-bottom: 2px solid #ff6001;
+    padding-bottom:8px;
+}
+
+
+
+
+/*.category-menu-nav .swiper-wrapper .active li a:after{
+    background: #ff6001;
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    top: -9px;
+    content: '';
+    display: block;
+}*/
+
+
+/*//---------------------active----------------- */
+
+.category-banner-img img{
+    width: 100%;
+}
+
+.category-menu-section {
+    border-bottom: 10px solid #ebebeb;
+}
+
+.category-menu-section:last-child {
+    border: none;
+}
+
+.category-menu-section-wrap .category-menu-section div li {
+    width: 24.3%;
+    float: left;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.category-menu-section-wrap .category-menu-section div li:nth-child(n+5) {
+    border-bottom: 0;
+}
+
+
+.category-menu-section div li a{
+    text-align: center;
+    float: left;
+    padding: 2px 0 15px 5px;
+
+}
+
+.category-menu-section div li img {
+    width: 55px;
+    margin: 0 8px auto;
+    display: block;
+}
+
+.category-menu-section div li a span {
+    color: #333;
+    font-size: 11px;
+}
+.swiper-container {
+    border-bottom: 1px solid #ebebeb;
+    border-top: 1px solid #ebebeb;
+}
+
+
+.category-nav-fix{
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 21;
+}
+
+.pd-top {
+    padding-top: 73.5px;
+}
+
+header nav ul li:nth-child(3) a {
+	border-bottom: 2px solid #ff6601;
+}

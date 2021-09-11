@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+.board_title{padding:30px 0 10px; font-size: 1.75rem; font-weight: 600; text-align: center;}
+.wrap_inner{padding:0;}
+#boardview > .info {margin:20px 20px 0; background:#ececec;}
+#boardview > .info .subject {padding:10px 0 !important;}
+#boardview > .info .subject p {padding-top:5px;}
+#boardview > .info .subject p:first-child {padding-top:0;}
+#boardview > .info .subject .title {width:100%; font-size:18px; font-weight:bold; color:#000;}
+#boardview > .info .subject .stat {color:#666; font-size:13px;}
+#boardview > .boxview {padding:15px 20px; font-size:1.083rem; font-weight:600; line-height:20px;}
+#boardview > .boxview .content {word-break:break-all; word-wrap:break-word; font-weight:normal;}
+#boardview > .boxview .content * {font-family:inherit; font-size:inherit; text-align:inherit; line-height:inherit;}
+#boardview > .boxview .content img {max-width:100%; height:auto;}
+#boardview > .btn {margin:0 20px; padding:0 0 20px; text-align:right;}
+.box_btn.view_box_btn > * {border-color:#ccc; color:#000 !important;}
+
+
+

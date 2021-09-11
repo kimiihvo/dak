@@ -1,0 +1,292 @@
+@charset "utf-8";
+
+/*----------------------------
+	헤더
+	-----------------------------*/
+
+.odr-list-header-wrap > div {
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  line-height: 39px;
+}
+
+.odr-list-header {
+  width: 100%;
+  padding: 7px;
+}
+
+.odr-list-header a img {
+  width: 22px;
+  float: left;
+  padding: 13px 10px;
+}
+
+.odr-list-header h2 {
+  text-align: center;
+  font-size: 18px;
+  padding-right: 44px;
+  color: #111;
+}
+
+/*----------------------------
+	섹션
+	-----------------------------*/
+
+.odr-list-section {
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.odr-list-menu ul {
+  text-align: center;
+}
+
+.odr-list-menu ul li {
+  display: inline-block;
+  margin: 6px;
+  font-size: 14px;
+}
+
+.odr-list-menu ul li a {
+  color: #666;
+}
+
+.odr-list-menu ul li .active {
+  font-weight: bold;
+  color: #ff6001;
+}
+
+.odr-list-date-wrap {
+  margin: 30px 0;
+}
+
+.odr-list-date-wrap h4 {
+  font-weight: normal;
+  color: #666;
+}
+
+.odr-list-date ul {
+  text-align: center;
+  background-color: #fff;
+  margin: 16px 0;
+}
+
+.odr-list-date ul li {
+  display: table-cell;
+  padding: 12px 3px;
+  width: 2%;
+  border: 1px solid #ddd;
+  border-left: 0;
+  font-size: 12px;
+}
+
+.odr-list-date ul li.active {
+  background: #ff6001;
+  font-weight: bold;
+}
+
+.odr-list-date ul li.active a {
+  color: #fff;
+}
+.odr-list-date ul li:first-child {
+  border-left: 1px solid #ddd;
+}
+
+.odr-list-list .tab-ul {
+  text-align: center;
+  border-left: 1px solid #ddd;
+}
+
+.odr-list-list .tab-ul {
+  text-align: center;
+}
+
+.odr-list-list .tab-ul li.active {
+  border-top: 2px solid #ff6001;
+
+  border-bottom: 0;
+  font-weight: bold;
+  background: #fff;
+}
+
+.odr-list-list .tab-ul li.active a {
+  color: #ff6001;
+}
+
+.odr-list-list .tab-ul li {
+  display: table-cell;
+  width: 1%;
+  line-height: 50px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  border-width: 1px 1px 1px 0;
+}
+
+.odr-list-list-content {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: 0;
+}
+.odr-list-list-content .empty {
+  padding: 100px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/*----------------------------
+	기간 설정 inner
+	-----------------------------*/
+
+#odr-list-date-inner {
+  width: 100%;
+  display: none;
+  margin-bottom: 20px;
+}
+
+#odr-list-date-inner .from-to {
+  width: 75%;
+  float: left;
+}
+
+#odr-list-date-inner .from-to ul {
+  width: 100%;
+}
+
+#odr-list-date-inner .from-to li {
+  float: left;
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+#odr-list-date-inner .from-to .when-text {
+  width: 12%;
+  line-height: 40px;
+  margin-left: 5px;
+}
+
+.from-to select {
+  padding: 10px 6px;
+  height: 38px;
+  width: 100%;
+  border: 1px solid #999;
+  background: #fff;
+}
+
+#odr-list-date-inner .inner-btn {
+  width: 25%;
+  float: right;
+  padding-top: 13px;
+}
+
+#odr-list-date-inner .inner-btn input {
+  display: inline-block;
+  background: #4b545e;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 21px 0;
+  width: 100%;
+}
+
+/*----------------------------
+	2021.1.1. 수정
+	-----------------------------*/
+.odr-list-menu ul li {
+  display: inline-block;
+  border-right: 1px solid #ccc;
+  margin: 6px 0;
+  padding: 0 6px;
+}
+
+.odr-list-menu ul li:last-child {
+  border-right: none;
+}
+
+/*----------------------------
+	2021.2.24. 김지효 수정
+	-----------------------------*/
+
+.odr-list-list-content li {
+  padding: 12px 15px;
+}
+
+.odr-list-list-content li .list-top {
+  margin: 10px 0;
+}
+
+.list-top span {
+  margin-right: 5px;
+}
+
+.list-top .odr-date {
+  font-weight: bold;
+}
+
+.list-top .odrno {
+  font-size: 12px;
+  color: #999;
+}
+
+.list-cnt {
+  width: 100%;
+}
+
+.cnt-img {
+  display: inline-block;
+  width: 28%;
+}
+
+.cnt-img img {
+  width: 100%;
+}
+
+.cnt-img p {
+  text-align: center;
+  font-size: 11px;
+  margin: 5px 0;
+  color: #666;
+}
+
+.cnt-right {
+  float: right;
+  width: 65%;
+  margin: 5px;
+}
+
+.cnt-right .cnt-bottom {
+  margin: 30px 0;
+}
+
+.cnt-right .cnt-bottom span {
+  margin-right: 5px;
+}
+
+.cnt-right .cnt-bottom .qty {
+  display: inline-block;
+  height: 15px;
+  border-right: 1px solid #ccc;
+  padding-right: 7px;
+}
+
+.cnt-right .status {
+  float: right;
+  font-weight: bold;
+  color: #ff6001;
+}
+
+.for-each-ul .for-each-li {
+  border-bottom: 1px solid #ddd;
+}
+
+.for-each-ul li:last-child {
+  border-bottom: none;
+}
+
+.list-cnt {
+  padding: 20px 0 10px;
+  border-bottom: 1px solid #ddd;
+}
+.list-cnt:last-child {
+  border-bottom: none;
+}

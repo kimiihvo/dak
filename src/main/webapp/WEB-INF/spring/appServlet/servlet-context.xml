@@ -12,8 +12,10 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
-	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
-	<resources mapping="/resources/**" location="/resources/" />
+	<!-- 웹 리소스 위치(location)에 대한 URL 맵핑(mapping) -->
+    <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+    <!--resources mapping="/resources/**" location="/resources/" /-->
+    <resources mapping="/assets/**" location="/WEB-INF/views/assets/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -21,8 +23,30 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="study.spring.dak" />
+	<!-- 컨트롤러나 서비스의 구현체가 포함되어 있는 패키지들 나열 -->
+    <context:component-scan base-package="study.spring.dak.controllers" />
+    <context:component-scan base-package="study.spring.dak.service.impl" />
 	
-	
+    <!-- 인터셉터 등록 -->
+    <interceptors>
+        <interceptor>
+            <mapping path="/**" />
+            <beans:bean id="appInterceptor" class="study.spring.dak.interceptor.AppInterceptor" />
+        </interceptor>
+        
+        <interceptor>
+            <mapping path="/mypage/**" />
+            <mapping path="/shop/cart.do" />
+            <mapping path="/shop/cart_add_ok.do" />
+            <mapping path="/shop/order.do" />
+            <mapping path="/shop/order_ok.do" />
+            <beans:bean id="loginInterceptor" class="study.spring.dak.interceptor.LoginCheckInterceptor" />
+        </interceptor>
+        
+        <interceptor>
+        	<mapping path="/member/login.do"/>
+        	<beans:bean id="autoLoginInterceptor" class="study.spring.dak.interceptor.AutoLoginInterceptor" />
+        </interceptor>
+    </interceptors>
 	
 </beans:beans>

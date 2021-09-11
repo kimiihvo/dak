@@ -1,0 +1,191 @@
+@charset "utf-8";
+
+/*----------------------------
+1:1문의 폼
+-----------------------------*/
+
+.counsel-section h3 {
+    font-size: 15px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.counsel-form {
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.counsel-write {
+    margin: 20px 10px;
+}
+
+.counsel-select select {
+    width: 100%;
+    height: 44px;
+    padding: 4px 6px;
+    border: 1px solid #999;
+    border-radius: 0;
+    background-color: #fff;
+}
+
+.counsel-write > div {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.counsel-title input,
+.counsel-content textarea,
+.file-name,
+.filebox .file-btn {
+    width: 100%;
+    height: 44px;
+    padding: 10px 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #666;
+}
+
+.counsel-content textarea {
+    box-sizing: border-box;
+    height: auto;
+    resize: none;
+}
+
+.counsel-content textarea:focus,
+.counsel-select select:focus {
+    outline: none;
+}
+
+.filebox {
+    position: relative;
+}
+
+#file-btn {
+    display: none;
+}
+
+.filebox label {
+    display: inline-block;
+    position: absolute;
+    top: 48%;
+    left: 4px;
+    background-color: #999;
+    padding: 12px 0 11px;
+    color: #fff;
+    border-radius: 3px;
+    width: 29%;
+    max-width: 80px;
+    text-align: center;
+    margin-top: -17px;
+    margin-right: 2%;
+}
+
+.file-name {
+    padding: 13px 5px 12px 90px;
+    font-size: 12px;
+}
+
+.counsel-title input:focus,
+textarea:focus {
+    border: 1px solid #333;
+    box-shadow: 2px 2px 8px rgba(135, 139, 144, 0.8);
+}
+
+/** ---------------------------------- */
+.review-notice {
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    width: 100%;
+    border: 1px solid #666;
+    padding: 14px;
+}
+
+.rating_star {
+	width:30px;
+	height:30px;
+	box-sizing : border-box;
+}
+.rating_star img {
+    width: 30px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.review-rating {
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.review-rating h2 {
+    display: inline-block;
+    width: 20%;
+    font-size: 15px;
+    position: relative;
+    top: 3px;
+}
+
+.rating-val {
+    display: inline-block;
+}
+
+.review-wr-cnt-wrap {
+    margin-top: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.review-wr-cnt {
+    margin: 0 20px 20px;
+}
+
+
+.cnt-img img {
+    width: 80px;
+}
+
+.review-txt {
+    margin-bottom: 10px;
+}
+.review-txt h2 {
+    font-size: 15px;
+    padding: 20px 0;
+}
+
+.review-txt textarea {
+    width: 100%;
+    height: 44px;
+    padding: 10px 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #666;
+    box-sizing: border-box;
+    height: auto;
+    resize: none;
+}
+.caution {
+    font-size: 11px;
+    color: #ff542a;
+    margin: 10px 0;
+    line-height: 17px;
+}
+.submit {
+	border: 0px;
+    outline: 0px;
+    width: 100%;
+    padding: 15px 0px;
+    border-radius: 4px;
+    background: #ff6001;
+    color: #ffff;
+    font-weight: bold;
+    font-size: 15px;
+}
+.caution.caution2 {
+	margin-bottom : 15px;
+}
+
+div#content_cnt {
+    color: #666;
+    font-size: 11px;
+    padding: 5px 0;
+}

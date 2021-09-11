@@ -1,0 +1,270 @@
+@charset "utf-8";
+
+/*----------------------------
+헤더
+-----------------------------*/
+
+.coupon-header-wrap > div {
+	border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    line-height: 39px;
+}
+
+
+.coupon-header {
+    width: 100%;
+    padding: 7px;
+
+
+}
+
+.coupon-header a img {
+    width: 22px;
+    float: left;
+    padding: 13px 10px;
+}
+
+.coupon-header h2 {
+    text-align: center;
+    font-size: 18px;
+    padding-right: 55px;
+    color: #111;
+}
+
+/*----------------------------
+섹션
+-----------------------------*/
+
+
+
+.coupon-section {
+
+}
+
+.coupon-menu {
+	padding: 10px;
+}
+
+.coupon-menu ul {
+	text-align: center;
+}
+
+.coupon-menu ul li {
+	display: inline-block;
+	margin: 6px;
+	font-size: 14px;
+}
+
+.coupon-menu ul li a {
+	color: #666;
+}
+
+.coupon-menu ul li .active {
+	font-weight: bold;
+	color: #ff6001;
+}
+
+.coupon-menu ul li {
+	display: inline-block;
+	border-right: 1px solid #ccc;
+	margin: 6px 0;
+	padding:0 6px;
+
+}
+
+
+.coupon-menu ul li:last-child {
+	border-right: none;
+}
+
+/*----------------------------
+쿠폰등록
+-----------------------------*/
+
+.register {
+	padding: 10px 15px 20px;
+	border-bottom: 1px solid #ededed;
+}
+
+.register h3 {
+	margin: 13px 0;
+	font-size: 16px;
+}
+
+.register .coupon-num {
+	float: left;
+    width: calc(100% - 70px);
+    height: 40px;
+    border: 1px solid #444;
+    padding: 10px 10px;
+}
+
+.register .register-btn {
+	float: right;
+    width: 70px;
+}
+
+.register .register-btn input {
+	width: 70px;
+    height: 40px;
+    font-size: 14px;
+    border: 1px solid #444;
+    background: #444;
+    color: #fff;
+    font-weight: bold;
+
+}
+
+
+.coupon-top {
+	padding: 10px 15px;
+}
+
+.coupon-top>span {
+	display: inline-block;
+	line-height: 38px;
+	font-size: 12px;
+
+}
+
+.coupon-top .count {
+	font-weight: bold;
+	color: #ff6001;
+}
+
+.coupon-top select {
+	float: right;
+	height: 38px;
+    color: #333;
+    font-size: 14px;
+    padding: 4px 47px 4px 6px;
+    border-color: #e6e6e6;
+    background: #fff;
+}
+
+.coupon-list-wrap {
+	background: #f7f7f7;
+    border-bottom: 1px solid #ededed;
+    padding: 15px;
+}
+
+.coupon-list {
+
+	display: table;
+    width: 100%;
+    background: #fff;
+    border: 0;
+    border-radius: 7px;
+    padding: 0;
+    /* margin: 0 0 15px; */
+
+}
+
+.coupon-list-left {
+	float: inherit;
+    display: table-cell;
+    width: 70%;
+    padding: 20px;
+    border-right: 1px dashed #ededed;
+
+}
+
+.coupon-list-left p {
+	margin-bottom: 10px;
+}
+
+.coupon-list-left .name {
+	font-size: 14px;
+	color:#000;
+	margin-bottom: 25px;
+	font-weight: bold;
+}
+
+.coupon-list-left .howmuch {
+	color: #ff6001;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+.coupon-list-left .howmuch span {
+	color: #ff6001;
+	font-size: 18px;
+
+}
+
+.coupon-list-left .notice {
+	font-size: 12px;
+	color: #666;
+}
+
+.coupon-list-right {
+	display: table-cell;
+    width: 30%;
+    margin-left: 0;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+}
+
+
+.coupon-list-right .d {
+    width: 67px;
+    margin: 0 auto 35px;
+    color: #fff;
+    background-color: #ff542a;
+    border-radius: 13px;
+    padding: 5px 0 7px;
+
+}
+
+.coupon-list-right .d span {
+	color: #fff;
+}
+
+.coupon-list-right .go span {
+    display: block;
+    font-size: 11px;
+    padding: 15px 0 0;
+}
+.coupon-list-right .go img {
+	width: 31px;
+}
+
+/*----------------------------
+2021.2.21. 수정
+-----------------------------*/
+
+#ajax-coupon-disabled .coupon-list-left .howmuch {
+	color: #666;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+#ajax-coupon-disabled .coupon-list-left .howmuch span {
+	color: #666;
+	font-size: 18px;
+
+}
+
+#ajax-coupon-disabled .coupon-list-right .d {
+    width: 67px;
+    margin: 0 auto 35px;
+    color: #fff;
+    background-color: #666;
+    border-radius: 13px;
+    padding: 5px 0 7px;
+
+}
+
+.empty {
+	text-align: center;
+    padding: 100px 0;
+}
+
+.expire {
+	font-size: 11px;
+}
+
+#ajax-coupon-disabled {
+	display: none;
+}

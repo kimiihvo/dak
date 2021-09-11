@@ -1,0 +1,193 @@
+@charset "utf-8";
+
+header {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+body {
+	text-size: 14px;
+	line-height: 1.4;
+}
+
+.hidden {
+    display: none;
+}
+
+.box_member {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+h2.title {
+    position: relative;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+h2.title a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: url(../img/kind_back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 22px;
+}
+
+.tab_login {
+    margin-bottom: 40px;
+    padding: 0 20px;
+    text-align: right;
+}
+
+.tabmenu {
+    overflow: hidden;
+}
+
+.tabmenu .tab {
+	padding: 10px 0;
+    float: left;
+    width: 50%;
+    border-bottom: 2px solid #ffdfcc;
+}
+
+.tabmenu .tab.active {
+    border-color: #ff6001;
+}
+
+.tabmenu .tab.tab_login1 {
+    display: block;
+}
+
+.tabmenu .tab.tab_login3 {
+    display: block;
+}
+
+.tabmenu .tab.active a {
+    color: #ff6001;
+    font-weight: 600;
+}
+
+.tabmenu .tab a {
+    display: block;
+    padding: 15px 0 12px;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+}
+
+/** 로그인 탭 내용부 */
+.tab_contents {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 640px;
+}
+
+.tab_content {
+	display: none;
+}
+
+.tab_content.active {
+    display: block;
+}
+
+.box_member fieldset {
+    position: relative;
+    padding: 0;
+}
+
+.box_member fieldset .fld {
+    clear: both;
+    margin-bottom: 15px;
+    font-size: 0;
+}
+
+.box_member fieldset .fld label {
+    display: inline-block;
+    width: 25%;
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 38px;
+}
+
+.box_member .form_input.member {
+    display: inline-block;
+    width: 75%;
+    height: 42px;
+    padding: 0 10px;
+    border-color: #999;
+    border-radius: 2px;
+    background: #fff;
+    line-height: 35px;
+}
+
+.form_input {
+    height: 44px;
+    padding: 10px 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #666;
+    transition: all .3s ease;
+}
+
+.box_member .form_input.member.number_first {
+    width: 23%;
+}
+
+.box_member .form_input.member.number {
+    width: 25%;
+    margin-left: 1%;
+}
+
+.box_member .form_input.member.number {
+    width: 25%;
+    margin-left: 1%;
+}
+
+.box_btn {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.box_btn.block {
+    display: block;
+}
+
+.box_btn.large * {
+    height: 50px;
+    font-size: 18px;
+}
+
+.box_member .box_btn.large * {
+    padding: 10px 16px 10px;
+    line-height: 20px;
+}
+
+.box_member .box_btn * {
+    border-radius: 3px;
+}
+
+.box_btn.strong * {
+    font-weight: bold;
+}
+
+.box_btn.orange * {
+    border-color: #ff6001;
+    background: #ff6001;
+    color: #fff !important;
+}
+
+.box_btn.block > * {
+    width: 100%;
+}
+
+span.box_btn {
+	margin-top: 35px;
+}

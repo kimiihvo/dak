@@ -1,0 +1,432 @@
+@charset "utf-8";
+
+#join_input {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 640px;
+}
+
+body {
+    font-size: 13px;
+}
+
+h2 {
+    position: relative;
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 16px 0 15px;
+    color: #333;
+    border-bottom: 0;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #e6e6e6;
+    text-align: center;
+}
+
+h2 a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: url(../img/kind_back_btn.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 22px;
+}
+
+.hidden {
+    display: none;
+}
+
+fieldset .box {
+    padding: 17px 8.5px 0 9px;
+    border: 0;
+    background: #fff;
+}
+
+.form-wrapper {
+    padding: 0 12px 25px;
+}
+
+.join_div_tit {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.join_div_tit .star {
+    color: #ff6001;
+}
+
+fieldset .box > div {
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.form_input {
+    height: 44px;
+    color: rgb(102, 102, 102);
+    font-size: 13px;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221);
+    border-image: initial;
+    background: rgb(255, 255, 255);
+    transition: all 0.3s ease 0s;
+}
+
+.form_input.readonly {
+    background: #e0e0e0;
+}
+
+fieldset .box > div > .form_input {
+    display: inline-block;
+    width: 100%;
+    height: 42px;
+    line-height: 38px;
+    border-color: #ccc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+fieldset .box .warning {
+    display: none;
+    padding: 5px 5px 0;
+    word-break: break-word;
+}
+
+fieldset .box .addbtn .check {
+    display: inline-block;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    height: 34px;
+    padding: 0 13px;
+    font-size: 13px;
+    font-weight: normal;
+    color: #fff;
+    line-height: 35px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background: #999;
+}
+
+.chk_pw .error_msg {
+    font-size: 12px;
+    color: #ff6001;
+    display: none;
+    padding: 5px 0 0 5px;
+}
+
+fieldset .box .email .form_input.first {
+    width: 47%;
+}
+
+fieldset .box .email .form_input.second {
+    float: none;
+    width: 48%;
+}
+
+fieldset .box .email span {
+    display: inline-block;
+    width: 4%;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+fieldset .box .email select {
+    margin-top: 10px;
+    width: 67%;
+    background-position: 98% center;
+}
+
+fieldset .box > div select {
+    height: 40px;
+    padding: 0 6px;
+    border-color: #ccc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 38px;
+}
+
+/*select {
+    background-image: url(../../img/ar_down.png);
+    background-repeat: no-repeat;
+    background-position: 93% center;
+    background-size: 12.5px 8px;
+}*/
+
+fieldset .box .birth {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#join_input fieldset .box .birth > div.select {
+    display: inline-block;
+    width: 100%;
+    font-size: 0;
+    vertical-align: middle;
+}
+
+#join_input fieldset .box .birth select {
+    margin-right: 1.1%;
+    width: 32.6%;
+}
+
+#join_input fieldset .box .birth select[name=birth3] {
+    margin-right: 0;
+}
+
+#join_input fieldset .box .type2 > div {
+    display: inline-block;
+    padding: 2px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+#join_input fieldset .box .type2 > div label {
+    float: left;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 0;
+    text-align: center;
+    border-radius: 2px;
+}
+
+#join_input fieldset .box .type2 > div label.checked {
+    color: #fff;
+    background: #ff6001;
+}
+
+#join_input fieldset .box input[type="radio"] {
+    display: none;
+}
+
+#join_input fieldset.agree legend {
+    padding-left: 9px;
+}
+
+#join_input fieldset.agree .box {
+    padding: 10px;
+}
+
+#join_input fieldset.agree .box .total label {
+    width: 100%;
+    height: 50px;
+    color: #333;
+    line-height: 50px;
+    font-size: 1.083rem;
+    text-align: center;
+    background: #f2f2f2;
+}
+
+#join_input fieldset.agree .box .total label.on {
+    color: #ff6001;
+    font-weight: 600;
+    line-height: 48px;
+    border: 1px solid #ff6001;
+}
+
+#join_input fieldset .box > div > label {
+    display: inline-block;
+    width: 25%;
+    vertical-align: middle;
+}
+
+#join_input fieldset.agree input[type="checkbox"] {
+    display: none;
+}
+
+#join_input fieldset .toggle {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    background-image: url(../img/ar_down.png);
+    background-repeat: no-repeat;
+    background-position: 98% 15px;
+    background-size: 12.5px 8px;
+}
+
+#join_input fieldset .toggle.on {
+    background-image: url(../../img/ar_up.png);
+}
+
+#join_input fieldset .toggle .check {
+    padding: 5px 0;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    overflow: hidden;
+    display: inline-block;
+    width: 20.5px;
+    height: 20.5px;
+    margin: 0 8px 0 0;
+    border: 0;
+    border-radius: 100%;
+    background: url(../img/checkbox.png) no-repeat center;
+    background-size: cover;
+}
+
+#join_input fieldset .toggle .check label span {
+    color: #808080;
+    font-size: inherit;
+}
+
+#join_input .custom_check {
+    display: inline-block;
+    margin-right: 7px;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    background-image: url(../img/chk_off.png);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+}
+
+#join_input label.on .custom_check {
+    background-image: url(../img/chk_on.png);
+}
+
+#join_input fieldset .toggle .check label {
+    font-size: 1.083rem;
+}
+
+#join_input fieldset.agree .box .toggle .cnt {
+    display: none;
+    border: 0;
+}
+
+#join_input fieldset .toggle .cnt, #join_input fieldset .toggle .cnt * {
+    width: 100%;
+}
+
+.tbl_row th {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    font-weight: normal;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.tbl_row td {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+    vertical-align: middle;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+#join_input fieldset .choice {
+    padding: 0 10px;
+    border: 1px solid #ddd;
+}
+
+#join_input fieldset .choice > div {
+    padding: 10px 0;
+}
+
+#join_input fieldset .choice > div > label > p {
+    margin-left: 22px;
+    color: #808080;
+}
+
+#join_input .notice {
+    padding-top: 20px;
+    line-height: 1.4;
+}
+
+#join_input .notice, #join_input .notice * {
+    color: #808080;
+    font-size: 0.8rem;
+}
+
+#join_input .box_btn {
+    margin: 17px 9px 0;
+    padding-bottom: 0px;
+}
+
+.box_btn.block {
+    display: block;
+}
+
+.box_btn {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.box_btn.large > * {
+    padding: 13px 15px 12px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.box_btn.orange * {
+    border-color: #ff6001;
+    background: #ff6001;
+    color: #fff !important;
+}
+
+.box_btn.strong * {
+    font-weight: bold;
+}
+
+.box_btn.block > * {
+    width: 100%;
+}
+
+#join_input .withdraw {
+    position: relative;
+    margin: 20px 10px 20px;
+    line-height: 34px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#join_input .withdraw .box_btn {
+    position: absolute;
+    top: 36px;
+    right: 0;
+    z-index: 5;
+    margin: 0;
+}
+
+#join_input .box_btn.small > * {
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: #666;
+    border: 1px solid #666;
+    color: #FFF;
+}
+
+.error {
+    color: red;
+}
+
+#join_input fieldset .box > div > label.error {
+    width: 100%;
+    font-size: 10px;
+    padding: 5px 10px;
+    margin: 0;
+}

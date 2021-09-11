@@ -1,0 +1,437 @@
+@charset "utf-8";
+
+/*----------------------------
+공통
+-----------------------------*/
+
+* {
+    padding: 0;
+    margin: 0;
+    color:#333;
+}
+html {
+}
+
+ul, ol { list-style: none; }
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+body {
+    min-width: 320px;
+    text-overflow: hidden;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif;
+    vertical-align: middle;
+    color: #333;
+}
+input:focus {
+    outline:none;
+}
+
+
+::-webkit-scrollbar { display: none; }
+
+
+.clear:after {
+    content:'';
+    display: block;
+    clear: both;
+    float: none;
+}
+/*----------------------------------------------------------*/
+
+input[type=checkbox] {
+	vertical-align : baseline;
+}
+
+.cart-header {
+    width: 100%;
+    padding: 8px 7px;
+    box-sizing: border-box;
+}
+
+.cart-header a img {
+    width: 22px;
+    float: left;
+    /* position: relative;
+    top: 5px; */
+}
+
+.cart-header h2 {
+    text-align: center;
+    font-size: 17px;
+    padding-right: 17px;
+    color: #333;
+}
+
+.cart-top{
+    line-height: 30px;
+    border-bottom: 10px solid #ebebeb;
+    padding: 12px 15px;
+}
+
+.cart-top a {
+    float: right;
+    border: 1px solid #ccc;
+    width: 68px;
+    text-align: center;
+    font-size: 11.5px;
+    color: #666;
+}
+
+.brand-check {
+    margin: 0 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.brand-check .brand-name {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.brand-check .brand-count {
+    float: right;
+    color: #666;
+}
+
+/*---------------------------------------------------------------------
+상품 박스 부분
+---------------------------------------------------------------------*/
+
+.prd-name-wrap {
+    margin-bottom: 15px;
+}
+
+.prd-name-wrap label {
+    margin-left: 5px;
+    font-size: 15px;
+    color: #333;
+}
+
+
+.prd_box {
+    padding: 15px;
+    position: relative;
+}
+
+.prd_img img{
+    width: 100%;
+}
+
+.prd-desc-left {
+    width: 30%;
+    float: left;
+}
+
+.prd-desc-right {
+    width: 66%;
+    float: right;
+    margin-left: 10px;
+}
+
+.prd-desc-right div{
+    margin: 10px 5px;
+
+}
+
+.prd-desc-wrap {
+    display: block;
+}
+
+.prd-desc-1 img {
+    width: 12px;
+    float: right;
+    position: absolute;
+    right: 22px;
+    top: -27px;
+}
+
+.prd-qty {
+    position: relative;
+    top: 16px;
+}
+
+.prd-qty img {
+    width: 12px;
+}
+
+.prd-qty a {
+    border: 1px solid #ccc;
+    padding: 6px 9px;
+}
+
+.prd-qty input {
+    width: 33px;
+    height: 31px;
+    box-shadow: none;
+    border: none;
+    text-align: center;
+    /*border: 1px solid #ccc;*/
+    position: relative;
+    bottom: 1px;
+
+}
+
+.prd-qty p {
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.prd-qty p span{
+    font-size: 12px;
+}
+
+.prd-qty .prd-price {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.prd_option {
+    display: inline;
+}
+
+.prd-desc-1 {
+    line-height: 20px;
+}
+
+/*---------------------------------------------------------------------
+배송비 + 금액 구간
+---------------------------------------------------------------------*/
+
+
+.delivery-charge {
+    padding: 15px;
+    border-bottom: 10px solid #ebebeb;
+    background-color: #f7f7f7;
+    font-size: 12px;
+}
+
+.delivery-charge span {
+    color: #666;
+}
+
+.delivery-charge .dlv-price {
+    color: #333;
+}
+
+.delivery-charge .dlv-more-wrap {
+    float: right;
+}
+
+.sum {
+    padding: 15px;
+}
+
+.sum .sum-cart-float {
+    float: right;
+    font-weight: bold;
+}
+
+.sum .sum-cart-price,
+.sum .sum-dlv-price,
+.sum .sum-cart-price-total {
+    font-size: 16px;
+}
+
+.cart-sum {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.total-sum {
+    padding: 10px 0;
+}
+
+.cart-sum div {
+    margin-bottom: 5px;
+}
+
+.sum .order-point {
+    font-size: 12px;
+    font-weight: normal;
+    width: 100%;
+}
+
+.sum .order-point span {
+    color: #666;
+}
+
+.total-sum {
+    line-height: 25px;
+}
+
+.sum .total-sum .sum-cart-float span{
+    color: #ff6001;
+}
+
+.sum .total-sum .sum-cart-float .sum-cart-price-total {
+    font-size: 20px;
+}
+
+/*---------------------------------------------------------------------
+카트 푸터
+---------------------------------------------------------------------*/
+
+.cart-footer {
+    margin: 15px;
+}
+
+.cart-btn > span{
+    display: inline-block;
+    width: 100%;
+    line-height: 58px;
+    background-color: #ff6001;
+    border-radius: 7px;
+    margin: 5px 0;
+}
+
+.cart-btn > span:last-child{
+    display: inline-block;
+    width: 100%;
+    line-height: 60px;
+    background-color: #fff;
+    border-radius: 7px;
+    margin: 5px 0;
+    border: 1px solid #4B545E;
+}
+
+
+
+
+.cart-btn a {
+    display: block;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.cart-btn a span {
+    color: #fff;
+}
+
+.cart-btn a .cart-btn-continue {
+    color: #333;
+}
+
+.dlv-msg span {
+    font-size: 11px;
+    color:#666;
+}
+
+
+
+/*---------------------------------------------------------------------
+빈 장바구니
+---------------------------------------------------------------------*/
+.empty {
+    display: none;
+    background-color: #f2f2f2;
+    padding: 15px;
+    text-align: center;
+    height: 100%;
+}
+
+.empty img {
+    width: 90px;
+    margin-bottom: 20px;
+}
+
+
+.empty p {
+    margin-bottom: 60px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #666;
+}
+
+.empty > span{
+    display: inline-block;
+    width: 100%;
+    line-height: 60px;
+    background-color: #fff;
+    border-radius: 7px;
+    margin: 5px 0;
+    border: 1px solid #4B545E;
+}
+
+.empty a .cart-btn-continue {
+    color: #333;
+}
+
+.empty a {
+    display: block;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.cart-section .checked-del {
+    outline: 0;
+    border: 0;
+    background: #fff;
+    font-size: 11.5px;
+    height: 30px;
+    color: #444;
+    width: 68px;
+    line-height: 12px;
+    float: right;
+	border: 1px solid #ccc;
+}
+
+.prd_box .prd-price-wrap {
+	position: relative;
+	top : 60px;
+}
+
+.edit-submit {
+	border: 0;
+    outline: 0;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #666;
+    padding: 5px 7px;
+    padding-right: 8px;
+    float: right;
+}
+
+.cart-header-wrap{
+	padding: 8px 7px;
+    border-bottom: 10px solid #ebebeb;
+} 
+
+.odr-submit {
+	outline: 0;
+    border: 0;
+    display: inline-block;
+    width: 100%;
+    line-height: 58px;
+    background-color: #ff6001;
+    border-radius: 7px;
+    margin: 5px 0;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.delivery-charge .price-right {
+	float: right;
+    color: #333;
+    font-weight: bold;
+	
+}
+
+.delivery-charge .prd-price {
+	font-size: 15px;
+    color: #333;
+}

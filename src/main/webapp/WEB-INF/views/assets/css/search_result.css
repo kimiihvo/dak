@@ -1,0 +1,296 @@
+@charset "utf-8";
+
+section {
+	box-sizing: border-box;
+}
+
+/*----------------------------
+헤더
+-----------------------------*/
+
+.sr-header-wrap {
+	border-top: 1px solid #eee;
+	width: 100%;
+	height: 100px;
+	box-sizing: border-box;
+	border-bottom: 10px solid #eee;
+
+}
+
+.sr-header h2,
+.sr-header h4 {
+	text-align: center;
+	margin:15px;
+}
+
+.sr-header h2 {
+	font-size: 24px;
+
+}
+
+.sr-header h4 {
+	font-weight: normal;
+}
+
+.sr-header h4 span {
+	color: #ff6001;
+}
+
+
+/*----------------------------
+섹션
+-----------------------------*/
+
+
+.sr-section-1{
+	border-bottom: 10px solid #eee;
+}
+
+.express-check {
+	padding: 10px 10px 0px 15px;
+	margin: 15px 0px 10px;
+}
+
+
+
+.sr-section-wrap h3 {
+	font-size: 18px;
+	text-align: center;
+	line-height: 60px;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.sr-section-wrap h3 span {
+	font-weight: normal;
+}
+
+.express-check label img {
+	width: 76px;
+}
+
+
+
+.sr-section-wrap .more {
+	width: 100%;
+	text-align: center;
+	line-height: 50px;
+/*	border-top:  1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;*/
+}
+
+.sr-section-wrap .sr-section-2 .more {
+	border-top:  1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+/*----------------------------
+박스 - 갤러리
+-----------------------------*/
+
+
+.sr-list-gallery-wrap {
+    margin:6px;
+   
+}
+
+
+.sr-list-gallery ul li {
+	display: block;
+	float: left;
+	width: 50%;
+	box-sizing: border-box;
+	padding: 13px 5px;
+	vertical-align: top;
+}
+
+
+
+.box .img {
+
+}
+
+.box .img img {
+    width: 100%;
+}
+
+.sr-list-gallery .box .img img {
+    border-radius: 4px;
+}
+
+.box .desc {
+    padding: 15px 15px 0;
+}
+
+.box .desc p {
+    margin-bottom: 4px;
+}
+
+.sr-list-gallery .box .desc {
+    padding: 0;
+}
+
+.box .desc .name {
+    padding-bottom: 5px;
+    color: #000;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: normal;
+    width: 100%;
+}
+
+.sr-list-gallery .box .desc .name {
+    margin-top: 10px;
+
+    font-size: 14px;
+    line-height: 1.5;
+ }
+
+.box .desc .price {
+    float: left;
+    margin-right: 10px;
+    line-height: 25px;
+}
+
+.sr-list-gallery .box .desc .price {
+    margin-right: 0;
+}
+
+.box .desc .price strong {
+    font-size: 20px;
+}
+
+.sr-list-gallery .box .desc .price strong {
+    font-size: 16px;
+}
+
+.box .desc .delivery {
+    float: left;
+    width: 80px;
+    line-height: 25px;
+}
+
+.sr-list-gallery .box .desc .delivery {
+    float: left;
+    width: 70px;
+    line-height: 25px;
+}
+
+.box .desc .rating {
+    float: right;
+    width: 120px;
+    line-height: 25px;
+    font-size: 11px;
+    color: #666;
+}
+
+.sr-list-gallery .box .desc .rating {
+    float: none;
+    clear: both;
+}
+
+.box .desc .delivery img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.box .desc .rating img {
+    width: 70%;
+    vertical-align: middle;
+}
+
+.box .desc .icon {
+
+}
+
+.box .desc .icon img {
+    height: 20px;
+    margin-right: 5px;
+}
+
+.box-list> .desc > .rating {
+	font-size: 12px;
+	color: #666;
+}
+
+
+/*----------------------------
+박스 - 리스트
+-----------------------------*/
+
+.sr-list-list-wrap {
+
+}
+
+.sr-list-list li {
+	display: block;
+	width: 100%;
+	padding: 20px 10px 10px 10px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.box-list {
+
+}
+
+
+.box-list >div {
+	float: left;
+}
+
+/*.box-list> .img {
+	width: 35%;
+}*/
+
+.box-list> .desc {
+	width: 58%;
+	margin-left: 15px;
+}
+
+.box-list> .img> img {
+	width: 100px;
+	border-radius: 4px;
+}
+
+.box-list .delivery {
+	width: 70px;
+    vertical-align: middle;
+}
+
+.box-list .rating img {
+	width: 80px;
+}
+
+.box-list> .desc > .name {
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.box-list> .desc > p {
+	margin-bottom: 10px;
+}
+
+.box-list> .desc > .price {
+	font-size: 17px;
+}
+
+.box-list> .desc > .icon img {
+	width: 46.5px;
+	margin-right: 1px;
+}
+
+.box-list> .desc > .icon >.mdpick {
+	width: 54px;
+	margin-right: 1px;
+}
+
+.box-list> .desc > .timer {
+    color: #ff542a;
+    font-size: 12px;
+}
+
+
+.empty {
+	text-align: center;
+    padding: 100px 0;
+}

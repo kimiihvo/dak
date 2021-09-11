@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+.gnb-fix {
+    position: fixed;
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-top: 0px;
+
+}
+
+.my-point {
+    padding: 10px;
+    background: #f9f9f9;
+    
+    
+}
+
+
+.mypage-fix2 {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    left: 0;
+    top: 48px;
+   
+
+}
+.mypage-fix {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-top:0;
+
+}
+
+.mypage-head {
+    position: relative;
+    margin: 0;
+    padding: 17px 0 16px;
+    border-bottom: 0;
+    line-height: 18px;
+    font-weight: bold;
+    background: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    letter-spacing: 3px;
+    border-top: 1px solid #e6e6e6;
+    
+    
+}
+.mypage-title2 {
+    text-align: center;
+    font-size: 18px;
+}
+.mypage-back {
+    background: url(../../img/kind_back.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 53px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 22px;
+    
+}
+
+/* main */
+.odr-list-menu ul {
+    text-align: center;
+    padding-bottom: 20px;
+
+}
+
+.odr-list-menu ul li {
+    display: inline-block;
+    margin: 6px;
+    font-size: 14px;
+}
+
+.odr-list-menu ul li a {
+    color: #666;
+}
+
+.odr-list-menu ul li .active {
+    font-weight: bold;
+    color: #ff6001;
+}
+.odr-list-menu ul li {
+    display: inline-block;
+    border-right: 1px solid #ccc;
+    margin: 6px 0;
+    padding:0 6px;
+
+}
+
+.odr-list-menu ul li:last-child {
+    border-right: none;
+}
+
+
+
+.own-point {
+    text-align:center;
+    font-size: 0;
+    line-height: 60px;
+}
+.own-point dt {
+    font-size: 14px;
+    display:inline-block;
+    width:48.5%;
+    border: 1px solid #000;
+    color: #fff;
+    font-weight: bold;
+    background: #666;
+    height: 60px;
+}
+.own-point dl {
+    display:inline-block;
+    width:48%;
+    border: 1px solid #000;
+    border-left: 0px;
+    height: 60px;
+    color: #ff6001;
+    font-weight: bold;
+    font-size: 14px;
+}
+.caution{
+        padding: 15px 0 45px;
+}
+.caution li {    
+    margin-top: 10px;
+    padding-left: 15px;
+    background: url(../../img/mark.png) no-repeat left 2px;
+    background-size: 10px;
+    color: #808080;
+    font-size: 12px;
+    line-height: 15px;
+
+}
+.caution li span {
+    color: #333;
+}
+
+
+.point_result {
+    font-size: 17px;
+    font-weight: normal;
+    padding-bottom: 20px;
+}
+
+
+.pnt-list-list ul {
+    text-align: center;
+    border-left: 1px solid #ddd;
+}
+
+.pnt-list-list ul {
+    text-align: center;
+}
+
+.pnt-list-list ul li.active {
+    border-top: 2px solid #ff6001;
+    
+    border-bottom: 0;
+    font-weight: bold;
+    background:#fff;
+}
+
+.pnt-list-list ul li.active a {
+    color: #ff6001;
+}
+
+.pnt-list-list ul li {
+    display: table-cell;
+    width: 1%;
+    line-height: 50px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    border-width: 1px 1px 1px 0;
+}
+
+.pnt-list-list-content {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: 0;
+}
+.pnt-list-list-content .empty {
+    padding: 100px 0;
+    text-align: center;
+    font-size: 14px;
+}
+#point-boxc {
+    display: none;
+}
+.pnt-list-list-content ul {
+    text-align : center;
+}
+
+.pnt-list-list-content ul li {
+    display:inline-block;
+    line-height: 25px;
+    border :0;
+    width: 20px;
+}
+.pnt-list-list-content ul li a {
+    display: block;
+    width : 100%;
+}
+
+

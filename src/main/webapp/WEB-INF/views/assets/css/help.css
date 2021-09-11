@@ -1,0 +1,349 @@
+@charset "utf-8";
+
+body {
+    line-height: 1.4;
+}
+
+section {
+    position: relative;
+    border-bottom: 10px solid #ebebeb;
+}
+
+section > div > h3 {
+    padding: 0 18px;
+    font-size: 1rem;
+    line-height: 46px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+h2.title {
+    position: relative;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #e6e6e6;
+    border-top: 1px solid #e6e6e6;
+}
+
+h2.title a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: url(../../assets/img/kind_back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 22px;
+}
+
+.sec-best7 h3 {
+    border-bottom: 0;
+}
+
+.sec-best7 ul {
+    padding-bottom: 18px;
+}
+
+.sec-best7 ul li {
+    float: left;
+    display: table;
+    width: 100px;
+    height: 85px;
+    margin: 0 0 0 10px;
+    padding: 0 10px;
+    color: #000;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    word-break: keep-all;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.sec-best7 ul li:last-child {
+    margin-right: 10px;
+}
+
+.sec-best7 ul li a {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+.sec-faq .tab-area ul {
+    display: inline-block;
+    padding: 0 15px;
+    width: 100%;
+    font-size: 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.sec-faq .tab-area ul li {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+}
+
+.sec-faq .tab-area ul li a {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 41px;
+}
+
+.sec-faq .tab-area ul li.active a {
+    color: #ff7e32;
+    font-weight: bold;
+}
+
+.sec-faq .tab-area ul li.active a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #ff7e32;
+}
+
+.sec-faq .tab-cnt > ul > li {
+    display: none;
+}
+
+
+.sec-faq .tab-cnt > ul > li.active {
+    display: block;
+}
+
+.tab-cnt .faq {
+    padding-bottom: 40px;
+}
+
+.faq .faq_li {
+    position: relative;
+}
+
+.tab-cnt .faq-li .faq-question {
+    position: relative;
+    padding: 15px 20px 15px 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.tab-cnt .faq-li .faq-question:before {
+    content: 'Q';
+    font-weight: 900;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.tab-cnt .faq-li .faq-answer {
+    display: none;
+    position: relative;
+    padding: 15px 20px 15px 40px;
+    background: #f7f7f7;
+}
+
+.tab-cnt .faq-li.on .faq-answer {
+    display: block;
+}
+
+.tab-cnt .faq-li .faq-answer:before {
+    content: 'A';
+    font-weight: 900;
+    color: #ff7e32;
+    position: absolute;
+    top: 15p;
+    left: 20px;
+}
+
+.tab-cnt .faq-li:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    border-bottom: 1px dotted #ebebeb;
+}
+
+.sec-1on1 .board-1on1 {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.sec-call a {
+    position: relative;
+    display: block;
+    padding: 25px 20px 25px 20px;
+}
+
+.sec-call a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    width: 10px;
+    background: url(../../assets/img/ranking_arrow_r.png);
+    background-size: 10px;
+    background-position: 95% 40px;
+    background-repeat: no-repeat;
+}
+
+.sec-call a td span {
+    display: inline-block;
+}
+
+.sec-call a td.cs_call span {
+    font-size: 18px;
+}
+
+.sec-call a td.cs_call .call_number {
+    position: relative;
+    padding-left: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sec-call a td.cs_call .call_number:before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 9px;
+    width: 1px;
+    height: 17px;
+    background: #e6e6e6;
+}
+
+.swiper-container.notice .swiper-wrapper {
+    height: 50px;
+}
+
+.sec-notice ul li {
+	box-sizing: border-box;
+    padding: 16px 24px 16px 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sec-notice .box_board {
+    overflow: hidden;
+    height: 50px;
+    padding-left: 35px;
+    background: url(../../assets/img/ico_notice.png);
+    background-size: 20px;
+    background-position: 20px center;
+    background-repeat: no-repeat;
+}
+
+
+.swiper-container.notice .swiper-slide {
+    height: auto !important;
+}
+
+section .more {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    padding-right: 10px;
+    background: url(../../assets/img/express_arrow_rgt.png);
+    background-size: 6px;
+    background-repeat: no-repeat;
+    background-position: 100% 3px;
+}
+
+.sec-1on1 .more {
+    position: absolute;
+    top: 8px;
+    right: 18px;
+    padding: 6px 14px;
+    background: #f0f0f0;
+}
+
+/*-------------------------
+2021.01.13. 수정 
+--------------------------*/
+
+.sec-best7 {
+    background-color: #fafafa;
+}
+
+.notice {
+    border-bottom: 0;
+}
+
+.call-img {
+	vertical-align: middle;
+}
+
+.one-on-one-top {
+	border-bottom: 1px solid #ebebeb;
+
+}
+
+.one-on-one-top h3 {
+	display: block;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+}
+
+.one-on-one-top h3 a {
+	position: absolute;
+    top: 9px;
+    right: 18px;
+    padding: 6px 14px;
+    background: #f0f0f0;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 19px;
+}
+
+.one-on-one-list ul li {
+	border-bottom: 1px solid #ebebeb;
+	
+}
+.one-on-one-list ul li {
+	border-bottom: 1px solid #ebebeb;
+	
+}
+.one-on-one-list .onenone {
+	padding :20px 0;
+	text-align: center;
+}
+
+.one-on-one-list ul li a {
+	display: block;
+    padding: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.one-on-one-list ul li img {
+	width: 45px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.one-on-one-list ul li:last-child a {
+	color: #666;
+	font-size: 12px;
+	text-align: center;
+}
+.one-on-one-list ul li:last-child .arrow {
+	width: 6px;
+	margin-left: 5px;
+}

@@ -1,0 +1,364 @@
+@charset "utf-8";
+
+
+section div {
+	box-sizing: border-box;
+}
+/*----------------------------
+헤더
+-----------------------------*/
+
+.myidx-header-wrap > div {
+	border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    line-height: 39px;
+}
+
+
+.myidx-header {
+    width: 100%;
+    padding: 7px;
+
+
+}
+
+.myidx-header a img {
+    width: 22px;
+    float: left;
+    padding: 13px 10px;
+}
+
+.myidx-header h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #111;
+}
+
+/*----------------------------
+섹션
+-----------------------------*/
+
+.myinfo {
+	position: inherit;
+    padding: 25px 0 20px;
+    background: url('../../assets/img/myrk_pg.jpg') no-repeat 100%;
+    background-size: cover;
+    border-top: 10px solid #ebebeb;
+    border-bottom: 10px solid #ebebeb;
+}
+
+.myinfo .member {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 7.5%;
+    text-align: left;
+}
+
+.myinfo p {
+	margin: 5px 5px;
+}
+
+.myinfo .id {
+	font-size: 22px;
+	font-weight: bold;
+	color: #000;
+	margin:10px 5px;
+
+}
+
+.myinfo .icon {
+	display: inline-block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.myinfo .icon img {
+	max-height: 70px;
+    vertical-align: middle;
+}
+
+.myinfo .name {
+/*	display: inline-block;*/
+}
+
+.myinfo .edit {
+	float: right;
+}
+
+.myinfo .edit a {
+	background-color: #ededed;
+    border: 0;
+    margin-left: 4px;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #000;
+
+    border-radius: 15px;
+    padding: 0 15px;
+    margin: 7px 0 0;
+}
+
+.myinfo .delivery ul {
+	margin: 20px 0;
+}
+
+.myinfo .delivery ul li {
+	float: left;
+    position: relative;
+    width: 33.33%;
+    height: auto;
+    background: no-repeat center;
+    background-size: 60px auto;
+    text-align: center;
+}
+
+.myinfo .delivery ul li:after {
+	content: '';
+    display: inline-block;
+	background: url('../../img/mypage_arrow.png') no-repeat;
+	background-size: 9px;
+	width: 9px;
+	height: 14px;
+	position: relative;
+	top: 2px;
+	left: 17px;
+}
+
+.myinfo .delivery ul li:last-child:after {
+	display: none;
+}
+
+.myinfo .delivery ul li a {
+	font-size: 15px;
+	font-weight: bold;
+	color: #000;
+}
+
+.myidx-menu-1 {
+	border-bottom: 10px solid #ebebeb;
+}
+
+.myidx-menu-1 ul li {
+	border-bottom: 1px solid #ebebeb;
+
+}
+
+.myidx-menu-1 ul li a {
+	display: block;
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+    position: relative;
+
+    line-height: 27px;
+    padding: 14px 15px;
+
+}
+
+
+.myidx-menu-1 ul li a img {
+	width: 25px;
+	vertical-align: middle;
+	position: relative;
+	bottom: 3px;
+
+	margin-right: 10px;
+}
+
+.myidx-menu-2 {
+	border-bottom: 10px solid #ebebeb;
+}
+
+.myidx-menu-2 ul li {
+	display: table-cell;
+	width: 1%;
+	border-right: 1px solid #ebebeb;
+}
+
+.myidx-menu-2 ul li a {
+	display: block;
+    font-size: 16px;
+    font-weight: normal;
+    position: relative;
+    
+    line-height: 27px;
+    padding: 14px 15px;
+    color: #000;
+}
+
+.myidx-menu-2 ul li a img,
+.myidx-menu-1 ul li a .arrow,
+.recent-top a p .arrow {
+	vertical-align: middle;
+	float: right;
+	width: 9px;
+	position: relative;
+	top: 7px;
+}
+
+.recent-top {
+	border-bottom: 1px solid #ebebeb;
+}
+
+.recent-top a {
+    display: block;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+}
+
+.recent-top a h3 {
+	display: inline-block;
+}
+.recent-top a p {
+	display: inline-block;
+	float: right;
+    color: #333;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.recent-top a p .arrow {
+	padding-top: 11px;
+	margin-left: 10px;
+}
+
+.myidx-recent {
+	border-bottom: 10px solid #ebebeb;
+}
+
+/*-----------------------------
+상품박스
+-----------------------------*/
+.box-list {
+	width: 100%;
+	padding: 15px;
+}
+
+.box-list>div {
+	float: left;
+}
+
+.box-list .img {
+	width: 30%;
+}
+
+.box-list .desc {
+	width: 70%;
+	padding-left: 10px;
+}
+
+.box-list .img img {
+	border-radius: 15px;
+	width: 100%;
+}
+
+.desc>p {
+	margin: 5px 0 7px;
+}
+
+.box-list .desc .odr-num {
+	display: inline-block;
+	font-weight: bold;
+	color: #000;
+	font-size: 15px;
+}
+.box-list .desc .status {
+	display: inline-block;
+	float: right;
+	color: #999;
+	font-weight: bold;
+}
+.box-list .desc .name {
+	line-height: 17px;
+}
+
+.one-on-one-top {
+	border-bottom: 1px solid #ebebeb;
+
+}
+
+.one-on-one-top h3 {
+	display: block;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+}
+
+.one-on-one-top h3 a {
+	position: absolute;
+    top: 9px;
+    right: 18px;
+    padding: 6px 14px;
+    background: #f0f0f0;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 19px;
+}
+
+.no-recent-list p {
+	text-align: center;
+	padding: 50px 0;
+}
+
+.onenone {
+	text-align: center;
+	padding: 50px 0;
+}
+
+.one-on-one-list ul li {
+	border-bottom: 1px solid #ebebeb;
+}
+
+.one-on-one-list ul li a {
+	display: block;
+    padding: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.one-on-one-list ul li img {
+	width: 45px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.one-on-one-list ul li:last-child a {
+	color: #666;
+	font-size: 12px;
+	text-align: center;
+}
+.one-on-one-list ul li:last-child .arrow {
+	width: 6px;
+	margin-left: 5px;
+}
+
+.title-fix{
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 21;
+}
+
+.pd-top {
+    padding-top: 50px;
+}

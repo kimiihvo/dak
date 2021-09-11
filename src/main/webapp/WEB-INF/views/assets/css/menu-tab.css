@@ -1,0 +1,301 @@
+@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    color:#000000;
+}
+
+ul, ol { list-style: none; }
+
+
+
+a{
+	text-decoration: none;
+	color: #000;
+}
+
+html, body { width: 100%; height: 100%; }
+
+body {overflow-x:hidden;
+ font-family: 'Noto Sans KR', sans-serif;
+ -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar { display: none; }
+
+
+.clear:after {
+    content:'';
+    display: block;
+    clear: both;
+    float: none;
+}
+
+section {
+	min-width: 320px;
+	margin: auto;
+}
+
+/* ---------------------------------------------------*/
+
+#menutab {
+	background-color: #ededed;
+	width: 100%;
+	display: none;
+}
+
+
+.menu-header {
+	padding: 15px 0px 0px 0px;
+	background-color: #ff7e31;
+	width: 100%;
+	height: 82px;
+}
+
+.menu-header-1 {
+	height: 35px;
+}
+
+.menu-header-left {
+	float: left;
+	margin-left: 15px;
+}
+
+
+.membership {
+	width: 45px;
+	height: 22px;
+	font-size: 11px;
+	background-color: #fff;
+	border-radius: 3px;
+	display: inline-block;
+	color: #ff7e31;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 3px;
+
+}
+
+.name {
+	display: inline-block;
+	color: #fff;
+	margin: 2px;
+	font-size: 15px;
+	padding-left: 2px;
+
+}
+
+.name span {
+	color: #fff;
+	font-size: 12px;
+	padding-left: 1px;
+}
+
+.menu-header-right {
+	float: right;
+
+}
+
+.menu-header-right a img {
+	width: 22px;
+	margin-right: 16px;
+}
+
+.cart-icon {
+	position: relative;
+	bottom: 1px;
+}
+
+
+.menu-navbar li {
+	margin-top: 12px;
+	width: 24%;
+	float: left;
+	text-align: center;
+	border-right: 1px #ff9650 solid;
+}
+
+.menu-navbar li:last-child {
+	border-right: none;
+}
+
+.menu-navbar a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 13px;
+}
+
+/* ---------------------------------------------------*/
+
+.menu-content {
+	margin-top: 10px;
+	background-color: #fff;
+}
+
+.tab-title .on{
+	width: 49.8%;
+	height: 46px;
+	font-size: 14px;
+	text-align: center;
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+	padding-top: 19px;
+	background-color: #fff;
+	border-bottom: none;
+	border-left: none;
+}
+
+.tab-title li{
+	width: 49.8%;
+	float: left;
+	height: 46px;
+	font-size: 14px;
+	text-align: center;
+	color: #555555;
+	padding-top: 19px;
+	background-color: #f7f7f7;
+	border-bottom: 1px #e6e6e6 solid;
+	border-left: 1px #e6e6e6 solid;
+}
+
+.tab-title li a {
+	text-decoration: none;
+	color: #333;
+}
+
+
+
+.tab-banner img {
+	width: 94%;
+	margin: 10px;
+
+}
+
+.menu-list{
+	margin: 0 15px;
+}
+
+
+.menu-list ul li {
+	display: block;
+	border-bottom: 1px #e6e6e6 solid;
+	height: 45px;
+	margin-top: 10px;
+}
+
+.menu-list ul li a img {
+	width: 35px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.menu-list ul li a {
+	font-size: 15px;
+	color: #333;
+	text-decoration: none;
+
+
+}
+
+/* ---------------------------------------------------*/
+
+.menu-table table {
+	margin-top: 10px;
+	border: 1px solid #e6e6e6;
+}
+
+.menu-table table td {
+
+	text-align: center;
+	height: 44px;
+	vertical-align: middle;
+	font-size: 12px;
+	border: 1px solid #e6e6e6;
+
+}
+
+.menu-table table td a {
+	text-decoration: none;
+	color: #666;
+}
+
+/* ---------------------------------------------------*/
+
+.menu-footer {
+	background-color: #fff;
+	margin-top: 10px;
+}
+
+.tab-weight {
+	padding: 10px 12px 10px 12px;
+	height: 120px;
+}
+
+.tab-weight h3 {
+	font-weight: bold;
+	font-size: 15px;
+	margin-left: 10px;
+}
+
+.tab-weight h3 span {
+	font-weight: normal;
+	color: #666666;
+	font-size: 12px;
+	padding-left: 8px;
+}
+
+.tab-weight ul {
+	padding: 12px 0px 12px 5px;
+}
+
+
+.tab-weight ul li {
+	display: inline-block;
+	width: 31%;
+	height: 40px;
+	text-align: center;
+	background-color: #f7f7f7;
+	margin-bottom: 8px;
+	border-radius: 5px;
+	margin-right: 4px;
+}
+
+.tab-weight ul li a {
+	font-size: 14px;
+	color: #333333;
+	position: relative;
+	top: 5px;
+}
+
+
+.tab-btm-1 {
+	height: 60px;
+}
+
+
+.tab-btm-1 .menu-logout {
+	float: left;
+	width: 80px;
+	height: 20px;
+	margin-left: 10px;
+	font-size: 13px;
+	color: #444444;
+	border: 1px #e6e6e6 solid;
+	background-color: #fff;
+	text-align:center;
+	padding: 5px;
+	border-radius: 2px;
+}
+
+
+.tab-btm-1 .tab-event {
+	float: right;
+	margin-right: 8px;
+	font-size: 13px;
+	color: #444444;
+	text-decoration: none;
+	padding-right: 13px;
+
+}

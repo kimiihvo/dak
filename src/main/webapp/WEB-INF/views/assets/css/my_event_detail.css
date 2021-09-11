@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+.gnb-fix {
+    position: fixed;
+    z-index: 100;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin-top: 0px;
+
+}
+
+.my-point {
+    padding: 10px;
+    background: #f9f9f9;
+    
+    
+}
+
+
+.mypage-fix2 {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    left: 0;
+    top: 48px;
+   
+
+}
+.mypage-fix {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-top:0;
+
+}
+
+.mypage-head {
+    position: relative;
+    margin: 0;
+    padding: 17px 0 16px;
+    border-bottom: 0;
+    line-height: 18px;
+    font-weight: bold;
+    background: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    letter-spacing: 3px;
+    border-top: 1px solid #e6e6e6;
+    
+    
+}
+.mypage-title2 {
+    text-align: center;
+    font-size: 18px;
+}
+.mypage-back {
+    background: url(../../assets/img/kind_back.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 53px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 22px;
+    
+}
+        .event-mainboxc {
+            padding: 10px 5px 10px;
+
+        }
+        .event-mainboxc img {
+            width: 100%;
+
+        }
+
+        .event-detail-head {
+            text-align:center;
+            padding-top: 30px;
+           
+        }
+        .event-detail-head div {
+            width:80%;
+            margin: 0 auto;
+            
+        }
+        .event-detail-head img {
+            width:100%;
+            
+        }
+        .event-detail-head p:nth-child(2) {
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 24px;
+            padding: 15px 10px;
+        }
+         .event-detail-head p:nth-child(2) {
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 24px;
+            padding: 15px 10px;
+        }
+        .event-detail-head p span {
+            display: inline-block;
+            padding: 0 10px;
+            border: 1px solid #eee;
+            border-radius: 3px;
+            color: #333;
+            line-height: 20px;
+            vertical-align: top;
+            margin-bottom: 15px;
+        }
+        .event-mainboxc1 {
+            float: left;
+            width:50%;
+        }
+        .white-box {
+            padding: 20px;
+            line-height: 160%;
+            clear: both;
+        }
+         .event-btcategory {
+            text-align: center;
+
+         }
+
+        .event-btcategory a {
+            display: inline-block;
+            margin: 0;
+            padding: 7px 32px;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid #ccc;
+
+        }
