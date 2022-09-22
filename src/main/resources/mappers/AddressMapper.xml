@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AddressMapper">
+
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+    <resultMap id="addressMap"
+        type="study.spring.dak.model.Address">
+        <!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+        <result property="adrno" column="adrno" />
+        <result property="toName" column="to_name" />
+        <result property="zcode" column="zcode" />
+        <result property="adr1" column="adr1" />
+        <result property="adr2" column="adr2" />
+        <result property="isDefault" column="is_default" />
+        <result property="express" column="express" />
+        <result property="memno" column="memno" />
+    </resultMap>
+
+    <!-- 단일행 조회를 위한 기능 정의 -->
+    <select id="selectItem"
+        parameterType="study.spring.dak.model.Address"
+        resultMap="addressMap">
+        SELECT * FROM address a INNER JOIN member m ON a.memno = m.memno WHERE a.memno= #{memno} AND adrno=#{adrno};
+    </select>
+    
+    
+
+    <!-- 다중행 조회를 위한 기능 정의 -->
+    <select id="selectList"
+        parameterType="study.spring.dak.model.Address"
+        resultMap="addressMap">
+        SELECT * FROM address a INNER JOIN member m ON a.memno = m.memno WHERE a.memno= #{memno}
+        
+        ORDER BY is_default; 
+        
+        <!-- <if test="listCount > 0">
+            LIMIT #{offset}, #{listCount}
+        </if> -->
+    </select>
+
+    <!-- 데이터 저장을 위한 기능 정의 -->
+    <insert id="insertItem"
+        parameterType="study.spring.dak.model.Address"
+        useGeneratedKeys="true"
+        keyProperty="adrno">
+        INSERT INTO address (memno, to_name, zcode, phone, adr1, adr2, is_default, express) 
+        
+        	VALUES (#{memno}, #{toName}, #{zcode}, #{phone}, #{adr1}, #{adr2}, #{isDefault}, #{express});
+    </insert>
+
+    <!-- 데이터 삭제를 위한 기능 정의 -->
+    <delete id="deleteItem"
+        parameterType="study.spring.dak.model.Address">
+        DELETE FROM address WHERE adrno=#{adrno};
+    </delete>
+	
+    <!-- 데이터 갱신을 위한 기능 정의 -->
+    <update id="updateItem"
+        parameterType="study.spring.dak.model.Address">
+        UPDATE address SET to_name=#{toName}, zcode=#{zcode}, adr1=#{adr1}, adr2=#{adr2}, phone=#{phone}, is_default=#{isDefault}, express=#{express}
+        WHERE adrno=#{adrno};
+    </update>
+    
+    <!--
+       기본배송지 중복 검사 기능을 위한 카운트
+    -->
+    <select id="selectCount" 
+            parameterType="study.spring.dak.model.Address"
+            resultType="int">
+        SELECT COUNT(*) FROM address WHERE memno=#{memno} AND is_default='Y';
+        
+    </select>
+    
+    <!-- 기본배송지 중복 검사 기능을 위한 카운트의 단일행 조회 -->
+    <select id="selectItemForCount"
+        parameterType="study.spring.dak.model.Address"
+        resultMap="addressMap">
+        SELECT * FROM address a INNER JOIN member m ON a.memno = m.memno WHERE a.memno= #{memno} AND is_default='Y';
+    </select>
+    
+    <!-- 주문페이지에서 사용: 멤버변수(int)값을 파라미터로 받는 기본 배송지 단일행조회 -->
+    <select id="selectAddressItemByMemno"
+        parameterType="int"
+        resultMap="addressMap">
+        SELECT * FROM address a INNER JOIN member m ON a.memno = m.memno WHERE a.memno= #{memno} AND is_default='Y';
+    </select>
+    
+    <!-- 회원 탈퇴시 주소 삭제를 위한 기능 정의 -->
+    <delete id="deleteOutMemberAddress"
+        parameterType="study.spring.dak.model.Member">
+        DELETE FROM address WHERE memno=#{memno};
+    </delete>
+
+</mapper>

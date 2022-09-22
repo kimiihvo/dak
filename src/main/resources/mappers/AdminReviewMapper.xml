@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminReviewMapper">
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+   	<resultMap id="adminReviewMap" type="study.spring.dak.model.Review">	
+		        	<result property="reviewno" column="reviewno" />
+			        <result property="prdno" column="prdno" />
+			        <result property="memno" column="memno" />
+			        <result property="content" column="content"/>
+			        <result property="regDate" column="reg_date" />
+			        <result property="memRating" column="mem_rating" />
+			        <result property="img" column="img" />
+			        <result property="nick" column="nick" />
+    </resultMap>
+    
+    
+    <select id="selectCountAll"
+		parameterType="study.spring.dak.model.Review"
+		resultType="int">
+		 SELECT count(*) FROM review r Inner JOIN member m ON m.memno=r.memno
+		<where>
+			<if test="nick != null and nick !=''">
+				m.nick Like concat('%',#{nick},'%')
+			</if>
+		</where>
+	</select>
+	
+    
+    <delete id="deleteItem"
+        parameterType="study.spring.dak.model.Review">
+        DELETE FROM review WHERE reviewno=#{reviewno}
+    </delete>
+	
+    
+	<!-- 다중행 조회를 위한 기능 정의 -->
+    <select id="selectList"
+        parameterType="study.spring.dak.model.Review"
+        resultMap="adminReviewMap">
+        SELECT * FROM review r Inner JOIN member m ON m.memno=r.memno 
+        <where>
+            <if test="nick != null and nick != ''">
+                nick LIKE concat('%', #{nick}, '%')
+            </if>         
+        </where>
+        ORDER BY r.reviewno DESC
+        	 <if test="listCount > 0">
+                LIMIT #{offset},#{listCount}
+          	</if>
+    </select>
+	<select id="selectItem"
+		parameterType="study.spring.dak.model.Review"
+		resultMap="adminReviewMap">
+		SELECT
+			*
+            FROM review as r
+	        Inner JOIN member m ON m.memno=r.memno
+	        WHERE r.reviewno=#{reviewno}
+	</select>
+
+
+
+</mapper>

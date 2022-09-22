@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="OutMemberMapper">
+
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+    <resultMap id="outMemberMap"
+        type="study.spring.dak.model.OutMember">
+        <!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+        <result property="outno" column="outno" />
+        <result property="memId" column="m_id" />
+        <result property="memName" column="m_name" />
+        <result property="phone" column="phone" />
+        <result property="email" column="email" />
+        <result property="outDate" column="out_date" />
+        <result property="outWhy" column="out_why" />
+    </resultMap>
+    
+	
+    <!-- 단일행 조회를 위한 기능 정의 -->
+    <select id="selectItem"
+        parameterType="study.spring.dak.model.OutMember"
+        resultMap="outMemberMap">
+        SELECT * FROM out_member WHERE outno=#{outno};
+    </select>
+
+    
+    <!-- 데이터 저장을 위한 기능 정의 -->
+    <insert id="insertItem"
+        parameterType="study.spring.dak.model.OutMember"
+        useGeneratedKeys="true"
+        keyProperty="outno">
+        INSERT INTO out_member (m_id, m_name, phone, email, out_why) VALUES (#{memId}, #{memName}, #{phone}, #{email}, #{outWhy});
+    </insert>
+
+    <!-- 데이터 삭제를 위한 기능 정의 -->
+    <delete id="deleteItem"
+        parameterType="study.spring.dak.model.OutMember">
+        DELETE FROM out_member WHERE outno=#{outno};
+    </delete>
+
+</mapper>

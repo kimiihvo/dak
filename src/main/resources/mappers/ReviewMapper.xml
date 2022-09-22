@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ReviewMapper">
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+   	<resultMap id="ReviewMap" type="study.spring.dak.model.Review">	
+		        	<result property="reviewno" column="reviewno" />
+			        <result property="prdno" column="prdno" />
+			        <result property="memno" column="memno" />
+			        <result property="odrno" column="odrno" />
+			        
+			        <result property="title" column="title" />
+			        <result property="nick" column="nick" />
+			        <result property="content" column="content"/>
+			        <result property="regDate" column="reg_date" />
+			        <result property="memRating" column="mem_rating" />
+			        <result property="img" column="img" />
+    </resultMap>
+    
+    
+    <insert id="insertItem"
+    	parameterType="study.spring.dak.model.Review">
+    	INSERT INTO review (
+    		 prdno, memno, odrno, content, mem_rating, img
+    		)
+    		VALUES( 
+    		 #{prdno} ,#{memno}, #{odrno}, #{content} ,#{memRating} ,#{img})	
+    </insert>
+    
+    
+    <select id="selectCountAll"
+		parameterType="study.spring.dak.model.Review"
+		resultType="int">
+		 SELECT count(*) FROM review r Inner JOIN member m ON m.memno=r.memno 
+		<where>
+				prdno=#{prdno}
+		</where>
+	</select>
+	
+	<!-- 다중행 조회를 위한 기능 정의 -->
+    <select id="selectList"
+        parameterType="study.spring.dak.model.Review"
+        resultMap="ReviewMap">
+        SELECT  r.prdno, m.memno, m.nick,  r.content, date_format(r.reg_date,'%Y-%m-%d') as reg_date, mem_rating, r.img FROM review r Inner JOIN member m ON m.memno=r.memno  
+        WHERE prdno=#{prdno}
+        ORDER BY r.reviewno DESC
+        	 <if test="listCount > 0">
+                LIMIT #{offset},#{listCount}
+          	</if>
+    </select>
+    
+    <select id="selectReviewItem"
+		parameterType="study.spring.dak.model.Review"
+		resultMap="ReviewMap">
+		SELECT
+			*
+            FROM review
+	        WHERE prdno=#{prdno} and  odrno=#{odrno} and  memno=#{memno}
+	</select>
+    
+    
+    <select id="selectMyReviewList" parameterType="study.spring.dak.model.Review" resultMap="ReviewMap">
+    	SELECT r.reviewno, r.prdno, r.content, date_format(r.reg_date,'%Y-%m-%d')  as reg_date, p.title ,mem_rating, r.img FROM review r inner join product p on r.prdno=p.prdno WHERE memno=#{memno} 
+    	ORDER BY r.reviewno DESC
+    	<if test="listCount > 0">
+                LIMIT #{offset},#{listCount}
+        </if>
+    </select>
+	
+	<select id="selectMyReviewCountAll"
+		parameterType="study.spring.dak.model.Review"
+		resultType="int">
+		 SELECT count(*) FROM review WHERE memno=#{memno}
+	</select>
+    
+    <resultMap id="ProductMap" type="study.spring.dak.model.Product">	
+		        	<result property="prdno" column="prdno" />
+			        <result property="title" column="title" />
+			        <result property="price" column="price" />
+			        <result property="rating" column="rating" />
+			        <result property="express" column="express"/>
+			        <result property="detailImg" column="detail_img" />
+			        <result property="weight" column="weight" />
+			        <result property="freeShipping" column="free_shipping" />
+			        <result property="onSale" column="on_sale" />
+			        <result property="regDate" column="reg_date" />
+			        <result property="thumb" column="thumb"/>
+			        <result property="mainImg" column="main_img" />
+			        <result property="subCateNo" column="sub_cate_no" />
+			        <result property="mainCateName" column="main_cate_name"/>
+			        <result property="subCateName" column="sub_cate_name" />
+			        <result property="mainCateNo" column="main_cate_no" />
+			        <result property="sv" column="sv" />
+    </resultMap>
+    <select id="selectItem"
+		parameterType="study.spring.dak.model.Product"
+		resultMap="ProductMap">
+		SELECT
+			*
+            FROM product
+	        WHERE prdno=#{prdno}
+	</select>
+	
+	<!-- 탈퇴한 회원의 리뷰를 남겨두기 위해 nobody 사용자인 12번 사용자 번호를 부여 -->
+	<update id="updateOutMemberReview" parameterType="study.spring.dak.model.Member">
+		UPDATE review SET memno='12' WHERE memno=#{memno};
+	</update>
+
+
+    
+	
+</mapper>

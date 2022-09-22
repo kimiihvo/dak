@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="OneOnOneMapper">
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+   	<resultMap id="oneOnOneMap" type="study.spring.dak.model.OneOnOne">	
+		        	<result property="memno" column="memno" />
+			        <result property="oneno" column="oneno" />
+			        <result property="regDate" column="reg_date" />
+			        <result property="category" column="category" />
+			        <result property="title" column="title"/>
+			        <result property="content" column="content" />
+			        <result property="file" column="file" />
+			        <result property="status" column="status" />
+			        <result property="nick" column="nick" />
+			        <result property="comContent" column="c_content" />
+			        <result property="comRegDate" column="c_reg_date" />
+    </resultMap>
+    
+    
+    <select id="selectCountAll"
+		parameterType="study.spring.dak.model.OneOnOne"
+		resultType="int">
+		 SELECT count(*) FROM one_on_one o Inner JOIN member m ON m.memno=o.memno Left Outer join one_on_one_comment c ON c.oneno=o.oneno 
+		 WHERE o.memno=${memno}	
+	</select>
+	
+	
+   	<insert id="insertItem"
+    	parameterType="study.spring.dak.model.OneOnOne">
+    	INSERT INTO one_on_one (
+    		 memno, title, category, content, file)
+    		VALUES( 
+    		#{memno},#{title},#{category},#{content},#{file})	
+    </insert>
+    
+	<!-- 다중행 조회를 위한 기능 정의 -->
+    <select id="selectList"
+        parameterType="study.spring.dak.model.OneOnOne"
+        resultMap="oneOnOneMap">
+        SELECT * FROM one_on_one o Inner JOIN member m ON m.memno=o.memno Left Outer join one_on_one_comment c ON c.oneno=o.oneno  
+        WHERE o.memno=${memno}
+        ORDER BY o.reg_date DESC
+        	 <if test="listCount > 0">
+                LIMIT #{offset},#{listCount}
+          	</if>
+    </select>
+	<select id="selectItem"
+		parameterType="study.spring.dak.model.OneOnOne"
+		resultMap="oneOnOneMap">
+		SELECT
+			o.memno, o.oneno, reg_date, category, title,     
+			content, file, status, nick, c_content, c_reg_date
+            FROM one_on_one as o
+	        Inner JOIN member m ON m.memno=o.memno Left Outer join one_on_one_comment c ON c.oneno=o.oneno
+	        WHERE o.oneno=#{oneno}
+	</select>
+	
+	
+	<!-- 회원 탈퇴시 1:1문의 답변 삭제를 위한 기능 정의 -->
+	<delete id="deleteOutMemberOneononeComment"
+        parameterType="study.spring.dak.model.OneOnOne">
+        DELETE FROM one_on_one_comment WHERE oneno=#{oneno};
+    </delete>
+	<!-- 회원 탈퇴시 1:1문의 삭제를 위한 기능 정의 -->
+	<delete id="deleteOutMemberOneonone" parameterType="study.spring.dak.model.Member">
+		DELETE FROM one_on_one WHERE memno=#{memno};
+	</delete>
+
+
+
+</mapper>

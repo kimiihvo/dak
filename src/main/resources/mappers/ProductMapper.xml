@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ProductMapper">
+
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+    <resultMap id="productMap"
+        type="study.spring.dak.model.Product">
+        <!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+        <result property="prdno" column="prdno" />
+        <result property="title" column="title" />
+        <result property="price" column="price" />
+        <result property="rating" column="rating" />
+        <result property="express" column="express" />
+        <result property="thumb" column="thumb" />
+        <result property="mainImg" column="main_img" />
+        <result property="detailImg" column="detail_img" />
+        <result property="weight" column="weight" />
+        <result property="freeShipping" column="free_shipping" />
+        <result property="onSale" column="on_sale" />
+        <result property="regDate" column="reg_date" />
+        <result property="subCateNo" column="sub_cate_no" />
+        <result property="mainCateName" column="main_cate_name"/>
+        <result property="subCateName" column="sub_cate_name" />
+        <result property="mainCateNo" column="main_cate_no" />
+        <result property="sv" column="sv" />
+        <result property="rct" column="rct" />
+    </resultMap>
+    
+	<update id="updateItem"
+        parameterType="study.spring.dak.model.Product">
+        UPDATE product SET rating=#{rating}, rct=#{rct}
+        WHERE prdno=#{prdno};
+    </update>
+    
+    
+    <!-- 단일행 조회를 위한 기능 정의 -->
+    <select id="selectItem"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="productMap">
+        SELECT * FROM product WHERE prdno=#{prdno};
+    </select>
+    
+    
+    <!-- 신상품 리스트 조회를 위한 기능 정의 ( 오늘 기준으로 한달 이내 등록된 상품 )-->
+    <select id="selectListNew"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="productMap">
+        
+        SELECT * FROM product WHERE on_sale='Y' AND reg_date >= DATE_ADD(now(), INTERVAL -30 DAY)
+
+        ORDER BY reg_date;
+    </select>
+    
+    <!-- 신상품 리스트 조회를 위한 기능 정의 ( 오늘 기준으로 한달 이내 등록된 상품 )-->
+    <select id="selectListNewIndex"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="productMap">
+        
+        SELECT * FROM product WHERE on_sale='Y' AND reg_date >= DATE_ADD(now(), INTERVAL -30 DAY) ORDER BY reg_date LIMIT 5;
+
+        
+    </select>
+    
+    
+    
+    <!-- 타임세일 리스트 조회를 위한 기능 정의 -->
+    <select id="selectListSale"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="productMap">
+        
+        SELECT * FROM product WHERE on_sale='Y' AND title LIKE ('%타임세일%'); 
+        
+    </select>
+    
+    
+    <!-- 알뜰킹 페이지 조회를 위한 기능 정의 -->
+    <select id="selectListSave"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="productMap">
+        
+        SELECT * , (price/weight)*100 'save' FROM product ORDER BY save LIMIT 10;
+        
+    </select>
+    
+    <!-- 판매킹 페이지 조회를 위한 기능 정의 -->
+    <select id="selectListPopular"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="productMap">
+        
+        <!-- SELECT *  FROM product ORDER BY sv DESC LIMIT 10; -->
+        SELECT * FROM product p INNER JOIN sub_category s ON p.sub_cate_no=s.sub_cate_no 
+        
+        INNER JOIN main_category m ON s.main_cate_no=m.main_cate_no
+        
+        ORDER BY sv DESC;
+        
+    </select>
+    
+    <select id="selectListPopularIndex"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="productMap">
+        
+        SELECT *  FROM product ORDER BY sv DESC LIMIT 4;
+        
+        
+    </select>
+    
+    <!-- 섹션 페이지 조회를 위한 기능 정의 -->
+    <select id="selectListSection"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="productMap">
+        
+        SELECT * FROM product p INNER JOIN sub_category s ON p.sub_cate_no=s.sub_cate_no 
+        
+		INNER JOIN main_category m ON s.main_cate_no=m.main_cate_no WHERE s.main_cate_no = 1 AND p.sub_cate_no=1;
+        
+    </select>
+    
+    <!-- 섹션 서브카테고리 별로 조회 기능  -->
+    <select id="selectListSectionCate"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="productMap">
+        
+        SELECT * FROM product p INNER JOIN sub_category s ON p.sub_cate_no=s.sub_cate_no 
+        
+		INNER JOIN main_category m ON s.main_cate_no=m.main_cate_no
+		WHERE s.main_cate_no =#{mainCateNo} AND p.sub_cate_no=#{subCateNo};
+        
+    </select>
+    
+    <!-- 섹션 메인카테고리 별로 조회 기능  -->
+    <select id="selectListSectionCateMain"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="productMap">
+        
+        SELECT * FROM product p INNER JOIN sub_category s ON p.sub_cate_no=s.sub_cate_no 
+        
+		INNER JOIN main_category m ON s.main_cate_no=m.main_cate_no
+		WHERE s.main_cate_no =#{mainCateNo};
+        
+    </select>
+    
+    
+    <!-- 특급배송 페이지 조회를 위한 기능 정의 -->
+    <select id="selectListExpress"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="productMap">
+        
+        SELECT * FROM product WHERE express = 'Y';
+        
+    </select>
+
+    <!-- 다중행 조회를 위한 기능 정의 -->
+    <select id="selectList"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="productMap">
+        SELECT * FROM product 
+        
+        <where>
+	            <if test="title != null and title != ''">
+	                title LIKE concat('%', #{title}, '%')
+	            </if>         
+	    </where>
+	    
+        ORDER BY prdno 
+        
+    </select>
+    
+    
+    <!-- 주문처리 완료 후 상품 주문량 업데이트를 위한 기능 정의 -->
+    <update id="updateProductSv" parameterType="study.spring.dak.model.Product">
+    	UPDATE product SET sv=sv+#{sv} WHERE prdno=#{prdno};
+    </update>
+
+    
+    
+    <!--
+        조건에 맞는 데이터 수를 집계하여 int 타입으로 반환한다.
+        count, max, min, sum, avg 함수를 사용한 경우 Mapper에서는
+        resultMap이 아닌 resultType으로 반환한다.
+    -->
+    <!-- 데이터 수 조회를 위한 기능 정의 -->
+    <select id="selectCountAll" 
+            parameterType="study.spring.dak.model.Product" resultType="int">
+        SELECT COUNT(*) FROM product
+        
+        <where>
+            <if test="title != null and title != ''">
+                title LIKE concat('%', #{title}, '%')
+            </if>
+            
+        </where>
+    </select>
+
+</mapper>

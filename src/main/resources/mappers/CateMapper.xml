@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CateMapper">
+
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+    <resultMap id="CateMap"
+        type="study.spring.dak.model.SubCategory">
+        <!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+        <result property="subCateNo" column="sub_cate_no" />
+        <result property="mainCateName" column="main_cate_name"/>
+        <result property="subCateName" column="sub_cate_name" />
+        <result property="mainCateNo" column="main_cate_no" />
+    </resultMap>
+    
+    <resultMap id="MainMap"
+        type="study.spring.dak.model.MainCategory">
+        <!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+        <result property="mainCateName" column="main_cate_name"/>
+        <result property="mainCateNo" column="main_cate_no" />
+    </resultMap>
+
+    
+
+    <select id="selectList"
+        parameterType="study.spring.dak.model.SubCategory"
+        resultMap="CateMap">
+        
+        SELECT * FROM sub_category s INNER JOIN main_category m ON s.main_cate_no=m.main_cate_no ;
+        
+    </select>
+    
+    <select id="selectListMainCate"
+        parameterType="study.spring.dak.model.MainCategory"
+        resultMap="MainMap">
+        
+        SELECT * FROM main_category;
+        
+    </select>
+
+    
+    
+
+</mapper>

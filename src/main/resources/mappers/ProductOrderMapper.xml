@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ProductOrderMapper">
+
+	<resultMap type="study.spring.dak.model.ProductOrder" id="productOrderMapper">
+		<result property="prdno" column="prdno"/>
+		<result property="odrno" column="odrno"/>
+		<result property="price" column="price"/>
+		<result property="qty" column="qty"/>
+		<result property="title" column="title"/>
+		<result property="thumb" column="thumb"/>
+	</resultMap>
+	
+	<insert id="insertItem">
+		INSERT INTO product_order (prdno, odrno, price, qty)
+		VALUES (#{prdno}, #{odrno}, #{price}, #{qty});
+	</insert>
+	
+	<select id="selectProductOrderByOrderlist" parameterType="study.spring.dak.model.OrderList" resultMap="productOrderMapper">
+		SELECT po.prdno, po.odrno, po.price, po.qty, p.title, p.thumb FROM product_order po INNER JOIN product p ON p.prdno = po.prdno WHERE odrno=#{odrno};
+	</select>
+	
+	<select id="selectProductOrderList" parameterType="study.spring.dak.model.ProductOrder" resultMap="productOrderMapper">
+		SELECT po.prdno, po.odrno, po.price, po.qty, p.title, p.thumb FROM product_order po INNER JOIN product p ON p.prdno = po.prdno WHERE odrno=#{odrno};
+	</select>
+	
+	<delete id="deleteProductOrder" parameterType="int">
+		DELETE FROM product_order WHERE odrno=#{odrno};
+	</delete>
+
+</mapper>

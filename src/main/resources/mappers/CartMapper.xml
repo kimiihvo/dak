@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CartMapper">
+
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+    <resultMap id="cartMap"
+        type="study.spring.dak.model.Cart">
+        <!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+        <result property="cartno" column="cartno" />
+        <result property="prdno" column="prdno" />
+        <result property="title" column="title" />
+        <result property="price" column="price" />
+        <result property="express" column="express" />
+        <result property="freeShipping" column="free_shipping" />
+        <result property="onSale" column="on_sale" />
+        <result property="regDate" column="reg_date" />
+        <result property="thumb" column="thumb" />
+        <result property="memno" column="memno" />
+        <result property="qty" column="qty" />
+        
+    </resultMap>
+
+    
+     <select id="selectCountAll"
+		parameterType="study.spring.dak.model.Cart"
+		resultType="int">
+		 SELECT count(*) FROM  cart
+		 WHERE memno=${memno}	
+	</select>
+    <!-- 장바구니 리스트 조회 -->
+    <select id="selectListCart"
+        parameterType="study.spring.dak.model.Cart"
+        resultMap="cartMap">
+        
+        SELECT * FROM cart c 
+        INNER JOIN product p ON c.prdno=p.prdno INNER JOIN member m ON c.memno=m.memno 
+        WHERE c.memno = #{memno} AND on_sale = 'Y';
+        
+    </select>
+    
+    <!-- 단일행 조회 -->
+    <select id="selectItemCart"
+        parameterType="study.spring.dak.model.Cart"
+        resultMap="cartMap">
+        
+        SELECT * FROM cart c 
+        INNER JOIN product p ON c.prdno=p.prdno INNER JOIN member m ON c.memno=m.memno 
+        WHERE c.memno = #{memno} AND p.prdno=#{prdno};
+        
+    </select>
+    
+    <!-- 데이터 저장을 위한 기능 정의 -->
+    <insert id="insertItem"
+        parameterType="study.spring.dak.model.Cart">
+        INSERT INTO cart (
+            memno, prdno, qty
+        ) VALUES (
+            #{memno}, #{prdno}, #{qty}
+        );
+    </insert>
+    
+    <!-- 데이터 삭제를 위한 기능 정의 -->
+    <delete id="deleteItem"
+        parameterType="study.spring.dak.model.Cart">
+        DELETE FROM cart WHERE cartno = #{cartno}
+    </delete>
+   
+    
+    <!-- 데이터 삭제를 위한 기능 정의 -->
+    <!-- 카트 목록 전체 비우기 -->
+    <delete id="deleteList"
+        parameterType="study.spring.dak.model.Cart">
+        DELETE FROM cart WHERE memno = #{memno};
+    </delete>
+    
+    <!-- 데이터 갱신을 위한 기능 정의 -->
+    <update id="updateItem"
+        parameterType="study.spring.dak.model.Cart">
+        UPDATE cart SET
+            qty=#{qty}, reg_date=now()
+        WHERE prdno=#{prdno} AND memno=#{memno};
+    </update>
+    
+    <!-- 데이터 수 조회를 위한 기능 정의 -->
+    <select id="selectCount"
+        parameterType="study.spring.dak.model.Cart" resultType="int">
+        SELECT COUNT(*)
+        FROM cart WHERE prdno=#{prdno} AND memno=#{memno};
+    </select>
+    
+    <!-- 장바구니 단일조회 (장바구니 번호만으로 조회): 주문 페이지에서 사용 -->
+	<select id="selectCartItemByCartno" parameterType="study.spring.dak.model.Cart" resultMap="cartMap">
+		SELECT c.cartno, c.qty, p.title, p.prdno, p.price, p.express, p.free_shipping, p.thumb FROM cart c 
+        INNER JOIN product p ON c.prdno=p.prdno WHERE cartno = #{cartno}
+    </select>
+    
+
+</mapper>

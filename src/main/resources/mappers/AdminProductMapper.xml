@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminProductMapper">
+    <!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->	
+   	<resultMap id="adminProductMap" type="study.spring.dak.model.Product">	
+		        	<result property="prdno" column="prdno" />
+			        <result property="title" column="title" />
+			        <result property="price" column="price" />
+			        <result property="rating" column="rating" />
+			        <result property="express" column="express"/>
+			        <result property="detailImg" column="detail_img" />
+			        <result property="weight" column="weight" />
+			        <result property="freeShipping" column="free_shipping" />
+			        <result property="onSale" column="on_sale" />
+			        <result property="regDate" column="reg_date" />
+			        <result property="thumb" column="thumb"/>
+			        <result property="mainImg" column="main_img" />
+			        <result property="subCateNo" column="sub_cate_no" />
+			        <result property="mainCateName" column="main_cate_name"/>
+			        <result property="subCateName" column="sub_cate_name" />
+			        <result property="mainCateNo" column="main_cate_no" />
+			        <result property="sv" column="sv" />
+			        <result property="rct" column="rct" />
+    </resultMap>
+    
+   	
+   	<insert id="insertItem"
+    	parameterType="study.spring.dak.model.Product"
+    	useGeneratedKeys="true" keyProperty="prdno">
+    	INSERT INTO product (
+    		title, price, rating, express, detail_img, weight, free_shipping, on_sale,sub_cate_no,main_img,thumb
+    		)
+    		VALUES( 
+    		#{title},#{price},#{rating},#{express},#{detailImg},#{weight},#{freeShipping},#{onSale},#{subCateNo},#{mainImg},#{thumb}
+    		)	
+    	
+    </insert>
+    <update id="updateItem"
+        parameterType="study.spring.dak.model.Product">
+        UPDATE product SET title=#{title},price=#{price},rating=#{rating},express=#{express},
+        					detail_img=#{detailImg},weight=#{weight},free_shipping=#{freeShipping},on_sale=#{onSale}
+        					,sub_cate_no=#{subCateNo},main_img=#{mainImg},thumb=#{thumb},rct=#{rct}
+        WHERE prdno=#{prdno};
+    </update>
+    
+      <update id="updateItem2"
+        parameterType="study.spring.dak.model.Product">
+        UPDATE product SET on_sale=#{onSale}
+        WHERE prdno=#{prdno};
+    </update>
+    
+    <!-- 데이터 수 조회를 위한 기능 정의 -->
+    <select id="selectCountAll"
+		parameterType="study.spring.dak.model.Product"
+		resultType="int">
+		 SELECT count(*) 
+		 FROM product p INNER JOIN sub_category s ON p.sub_cate_no=s.sub_cate_no INNER JOIN main_category m ON s.main_cate_no=m.main_cate_no 
+		<where>
+			<if test="title != null and title !=''">
+				p.title Like concat('%',#{title},'%')
+			</if>
+		</where>
+	</select>
+	<!-- 다중행 조회를 위한 기능 정의 -->
+    <select id="selectList"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="adminProductMap">
+        SELECT * FROM product p INNER JOIN sub_category s ON p.sub_cate_no=s.sub_cate_no INNER JOIN main_category m ON s.main_cate_no=m.main_cate_no 
+        <where>
+            <if test="title != null and title != ''">
+                p.title LIKE concat('%', #{title}, '%')
+            </if>         
+        </where>
+        ORDER BY p.prdno desc
+        	<if test="listCount > 0">
+                LIMIT #{offset},#{listCount}
+          	</if>
+    </select>
+	<!--관리자 상품페이지 리스트 @@@@@ -->
+	<select id="selectItem"
+		parameterType="study.spring.dak.model.Product"
+		resultMap="adminProductMap">
+		SELECT
+			*
+            FROM product as p
+	        INNER JOIN sub_category as s
+	        ON p.sub_cate_no = s.sub_cate_no 
+	        inner join main_category as m
+	        on s.main_cate_no = m.main_cate_no
+	        WHERE prdno=#{prdno}
+	</select>
+	
+
+    
+    <select id="selectMainCateList"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="adminProductMap">
+       
+            SELECT distinct m.main_cate_name, m.main_cate_no    FROM sub_category s INNER JOIN main_category m ON s.main_cate_no=m.main_cate_no  
+    </select>
+    
+    <select id="selectSubCateList"
+        parameterType="study.spring.dak.model.Product"
+        resultMap="adminProductMap">
+        	SELECT s.main_cate_no, s.sub_cate_name, s.sub_cate_no FROM sub_category s INNER JOIN main_category m ON s.main_cate_no=m.main_cate_no  WHERE s.main_cate_no = ${mainCateNo} 
+    </select>
+
+</mapper>

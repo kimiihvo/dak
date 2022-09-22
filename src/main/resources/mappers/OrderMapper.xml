@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="OrderMapper">
+	
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+    <resultMap id="orderMap"
+        type="study.spring.dak.model.OrderList">
+        <!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+        <result property="odrno" column="odrno" />
+        <result property="memno" column="memno" />
+        <result property="regDate" column="reg_date" />
+        <result property="toPrice" column="total_price" />
+        <result property="status" column="status" />
+        <result property="pay" column="pay" />
+        <result property="fee" column="fee" />
+        <result property="disAmount" column="dis_amount" />
+        <result property="dlvyName" column="dlvy_name" />
+        <result property="dlvyAdr" column="dlvy_adr" />
+        <result property="dlvyTel" column="dlvy_tel" />
+    </resultMap>
+	
+	<!-- 데이터 저장을 위한 기능 정의 -->
+    <insert id="insertItem" parameterType="study.spring.dak.model.OrderList" useGeneratedKeys="true" keyProperty="odrno">
+        INSERT INTO order_list (
+            memno, total_price, pay, fee, dis_amount, dlvy_name, dlvy_adr, dlvy_tel
+        ) VALUES (
+            #{memno}, #{toPrice}, #{pay}, #{fee}, #{disAmount}, #{dlvyName}, #{dlvyAdr}, #{dlvyTel}
+        );
+    </insert>
+    
+    <!-- 주문 다중행 조회 -->
+    <select id="selectOrderList" parameterType="int" resultMap="orderMap">
+    	SELECT * FROM order_list WHERE memno=#{memno} ORDER BY odrno DESC;
+    </select>
+    
+    <!-- 기간별 주문 조회 -->
+    <select id="selectOrderListByDate" parameterType="map" resultMap="orderMap">
+    	select * from order_list WHERE memno=#{memno} AND reg_date BETWEEN #{start} AND #{end} ORDER BY odrno DESC;
+    </select>
+    
+    <!-- 가장 최근 1개의 주문을 받아오는 단일행 조회 -->
+	<select id="selectLatestOrderItem" parameterType="int" resultMap="orderMap">
+    	SELECT * FROM order_list WHERE memno=#{memno} ORDER BY odrno DESC LIMIT 1;
+    </select>
+    
+
+    <!-- 주문 단일행 조회 -->
+    <select id="selectOrderItem" parameterType="int" resultMap="orderMap">
+    	SELECT * FROM order_list WHERE odrno=#{odrno};
+    </select>
+    
+    <!-- 주문 삭제 처리: 실제로 삭제되지않고 주문취소로 상태변경 업데이트 처리 -->
+    <update id="cancelOrder" parameterType="study.spring.dak.model.OrderList">
+    	UPDATE order_list SET status='주문취소' WHERE odrno=#{odrno}
+    </update>
+    
+    <!-- 회원 탈퇴 후 해당 회원의 주문을 nobody 회원의 주문으로 변경 -->
+    <update id="updateOutMemberOrder" parameterType="study.spring.dak.model.Member">
+    	UPDATE order_list SET memno='12' WHERE memno=#{memno};
+    </update>
+		
+</mapper>
