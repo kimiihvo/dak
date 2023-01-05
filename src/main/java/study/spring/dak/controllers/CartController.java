@@ -44,86 +44,6 @@ public class CartController {
 	String contextPath;
 	
 	
-
-//	/** 카트 리스트 조회 */
-//	@RequestMapping(value = "/shop/cart.do", method = RequestMethod.GET)
-//	public ModelAndView cart(Model model, HttpSession session) {
-//
-//		Member m = (Member) session.getAttribute("login");
-//
-//		int memno = m.getMemno();
-//
-//		Cart input = new Cart();
-//		input.setMemno(memno);
-//
-//		List<Cart> output = null;
-//
-//		try {
-//			output = cartService.getListCart(input);
-//
-//		} catch (Exception e) {
-//			return webHelper.redirect(null, e.getLocalizedMessage());
-//		}
-//
-//		model.addAttribute("output", output);
-//
-//		return new ModelAndView("shop/cart");
-//	}
-//
-//	/** 장바구니 상품 추가 기능 */
-//	@RequestMapping(value = "/shop/cart_add_ok.do", method = RequestMethod.POST)
-//	public ModelAndView add_ok(Model model, HttpSession session,
-//			@RequestParam(value = "memno", defaultValue = "0") int memno,
-//			@RequestParam(value = "prdno", defaultValue = "0") int prdno,
-//			@RequestParam(value = "qty", defaultValue = "0") int qty) {
-//
-//		Member m = (Member) session.getAttribute("login");
-//		memno = m.getMemno();
-//
-//		/** 2) 데이터 저장하기 */
-//		
-//		Cart input = new Cart();
-//		input.setMemno(memno);
-//		input.setPrdno(prdno);
-//
-//		try {
-//			// 중복 상품이 있는지 검사
-//			int count = cartService.countCartItem(prdno, memno);
-//
-//			
-//			if (count != 0) {
-//
-//				// DB의 정보를 가져올 빈즈 생성
-//				Cart db = null;
-//
-//				// 정보를 가져옴
-//				db = cartService.getItemCart(input);
-//
-//				// 개수만 담음
-//				int data = db.getQty();
-//
-//				// input에 추가할 개수와 원래 개수를 더해서 담음
-//				input.setQty(qty + data);
-//
-//				log.debug(input.toString());
-//
-//				cartService.updateCartItem(input);
-//
-//			} else {
-//				input.setQty(qty);
-//				cartService.addCartItem(input);
-//			}
-//
-//		} catch (Exception e) {
-//			return webHelper.redirect(null, e.getLocalizedMessage());
-//		}
-//
-//		/** 3) 결과를 확인하기 위한 페이지 이동 */
-//
-//		return webHelper.redirect(null, "장바구니에 추가되었습니다.");
-//	}
-//	
-//
 	/** 장바구니 상품 수정 처리 */
 	@RequestMapping(value = "/shop/cart_edit_ok.do", method = RequestMethod.POST)
 	public ModelAndView edit_ok(Model model, HttpSession session,
@@ -151,8 +71,6 @@ public class CartController {
 		} catch (Exception e) {
 			return webHelper.redirect(null, e.getLocalizedMessage());
 		}
-
-		// ajax로 수정 해야됨.....
 
 		return webHelper.redirect("cart.do", "상품 개수가 수정되었습니다.");
 	}
@@ -242,9 +160,6 @@ public class CartController {
 		}
 
 		/** 3) 페이지 이동 */
-		
-
-		// ajax로 수정 해야됨.....
 		return webHelper.redirect(contextPath + "/shop/cart.do", "삭제되었습니다.");
 
 	}
@@ -306,46 +221,8 @@ public class CartController {
 		}
 
 		/** 3) 페이지 이동 */
-		
-
-		// ajax로 수정 해야됨.....
 		return webHelper.redirect(contextPath + "/shop/cart.do", "장바구니에 추가되었습니다.");
 
 	}
-
-//	
-//	/** 장바구니 상품 다중 추가 처리 (미완!!!!!!!!!! 아직 수정 중 !!!!!!!!!!!!!!!!!!!!1)*/
-//	@RequestMapping(value = "/shop/cart_selected_add_ok.do", method = RequestMethod.POST)
-//	public ModelAndView selected_add_ok(Model model, HttpSession session,
-//			@RequestParam(value = "prdno", defaultValue = "0") int prdno,
-//			@RequestParam(value = "cart-check[]") String[] chArr) {
-//		
-//		Member m = (Member) session.getAttribute("login");
-//		int memno = m.getMemno();
-//
-//		Cart cart = new Cart();
-//
-//		/** 2) 데이터 저장하기 */
-//		try {
-//			cart.setMemno(memno);
-//
-//			for (String i : chArr) {
-//				prdno = Integer.parseInt(i);
-//				cart.setPrdno(prdno);
-//				cartService.addCartItem(cart);
-//			}
-//
-//		} catch (Exception e) {
-//			return webHelper.redirect(null, e.getLocalizedMessage());
-//		}
-//
-//		/** 3) 페이지 이동 */
-//		
-//
-//		// ajax로 수정 해야됨.....
-//		return webHelper.redirect(contextPath + "/shop/cart.do", "추가되었습니다.");
-//
-//	}
-
 
 }
